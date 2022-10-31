@@ -19,7 +19,7 @@
       <!--LEFT SECTION-->
       <div class="section about">
         <div class="info">
-          <h3 id="name">Name</h3>
+          <h2 id="name">Name</h2>
           <p class="labels">Sex: <span id="sex"></span></p>
           <p class="labels">Age: <span id="age"></span></p>
           <p class="labels">Race: <span id="race"></span></p>
@@ -42,6 +42,9 @@
           <span id="hairColor"></span> hair, which
           <span id="hairStyle"></span>
           <p class="labels">Body:</p>
+          <span id="skin"></span> has
+          <span id="skinToneDescription"></span> skin with a
+          <span id="undertoneDescription"></span> undertone.
           <span id="body"></span> <span id="bodyDescription"></span>
         </div>
       </div>
@@ -49,7 +52,7 @@
       <!--MIDDLE SECTION-->
       <div class="section ability-alignment">
         <div class="subsection abilities">
-          <h2>Ability Scores</h2>
+          <h3>Ability Scores</h3>
           <div class="ability-scores-row">
             <div class="ability-scores-column">
               <p>STR</p>
@@ -70,35 +73,36 @@
           </div>
         </div>
         <div class="subsection alignment">
-          <h2>Alignment</h2>
-          <div class="dropdown">
-            <button class="btn">Choose an Alignment</button>
-            <div class="dropdown-content">
-              <a href="#">Lawful Good</a>
-              <a href="#">Lawful Neutral</a>
-              <a href="#">Lawful Evil</a>
-              <a href="#">Neutral Good</a>
-              <a href="#">True Neutral</a>
-              <a href="#">Neutral Evil</a>
-              <a href="#">Chaotic Good</a>
-              <a href="#">Chaotic Neutral</a>
-              <a href="#">Chaotic Evil</a>
-            </div>
+          <h3>Alignment</h3>
+          <div class="alignments">
+            <button class="btn randomize">Randomize Alignment 🎲</button>
+            <h4 id="alignment">Lawful Good</h4>
+            <button id="lawGood" class="btn align">Lawful Good</button>
+            <button id="lawNeu" class="btn align">Lawful Neutral</button>
+            <button id="lawEvil" class="btn align">Lawful Evil</button>
+            <button id="neuGood" class="btn align">Neutral Good</button>
+            <button id="neu" class="btn align">True Neutral</button>
+            <button id="neuEvil" class="btn align">Neutral Evil</button>
+            <button id="chaGood" class="btn align">Chaotic Good</button>
+            <button id="chaNeu" class="btn align">Chaotic Neutral</button>
+            <button id="chaEvil" class="btn align">Chaotic Evil</button>
           </div>
         </div>
       </div>
 
       <!--RIGHT SECTION-->
-      <div class="section traits-quirks">
-        <div class="subsection traits">
-          <h2>Traits</h2>
-          <p>Please select an alignment option!</p>
+      <div class="section beliefs-personality">
+        <div class="subsection beliefs">
+          <h3>Beliefs</h3>
+          <p id="firstBelief">Please select an alignment option!</p>
+          <p id="secondBelief">Please select an alignment option!</p>
+          <p id="thirdBelief">Please select an alignment option!</p>
         </div>
-        <div class="subsection quirks">
-          <h2>Quirks</h2>
+        <div class="subsection personality">
+          <h3>Personality</h3>
         </div>
         <div class="subsection plot-hook">
-          <h2>Plot Hook</h2>
+          <h3>Plot Hook</h3>
         </div>
       </div>
     </div>

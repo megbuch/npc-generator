@@ -5,6 +5,10 @@ const sex = ["female", "male"];
 
 let confirmedSex = "";
 
+let confirmedAlignment = "";
+
+let confirmedBeliefLG = "";
+
 const femaleNames = [
   "Vera",
   "Penelope",
@@ -666,7 +670,7 @@ const hairStyle = [
   "is kept neatly in a bun.",
   "has a slightly wavy texture.",
   "is pulled into an elegant french twist.",
-  "has been freshly shaven.",
+  "has been buzzed.",
   "is short and wildly sticking up.",
   "looks to never have been washed.",
   "is tightly braided.",
@@ -678,6 +682,16 @@ const hairStyle = [
   "has a pixie cut.",
   "is long and flowing.",
   "is just incredible. Like.. is this hair even real?",
+  "is in two tight french braids.",
+  "is held loosely in a top-knot.",
+  "has not been brushed in weeks.. or years.",
+  "is wild and voluminous.",
+  "messily thrown together.",
+  "smells vaguely of honey",
+  "has a blunt, asymmetrical cut.",
+  "is hidden by a hood.",
+  "looks a tad bit greasy.",
+  "smells like roses.",
 ];
 
 const body = [
@@ -700,8 +714,71 @@ const body = [
   "is curvy with a small waist.",
   "has broad shoulders.",
   "has a bit of a beer belly.",
+  "looks delicate and frail.",
 ];
 
+const alignments = [
+  "Lawful Good",
+  "Lawful Neutral",
+  "Lawful Evil",
+  "Neutral Good",
+  "True Neutral",
+  "Neutral Evil",
+  "Chaotic Good",
+  "Chaotic Neutral",
+  "Chaotic Evil",
+];
+
+const skins = ["fair", "light", "tan", "medium", "olive", "deep"];
+
+const undertones = [
+  "pinkish",
+  "blueish",
+  "greenish",
+  "reddish",
+  "purplish",
+  "yellowish",
+];
+
+const beliefsLG = [
+  "Society has merit, and as a participant I defend it.",
+  "My Creed is my word, and my hand its upholder.",
+  "Though I may disagree, the wisdom of our elders will prevail.",
+  "There's nothing like the satisfaction of a made bed and folded laundry.",
+];
+
+const beliefsLN = [
+  "If I have to save the world, I will.",
+  "I am the sword that enforces the will of the people.",
+  "Justice is blind.",
+  "A vow is a vow. Nothing in this world is worth more.",
+];
+
+const beliefsLE = [
+  "Come hell or high water, I will hunt those that defy us.",
+  "There is no joy greater than seeing the fear in the eyes of those we bring to their knees.",
+  "An eye for an eye? If they take my eye, I'll build a beholder out of them and their kin.",
+];
+
+const beliefsNG = [
+  "The balance must be preserved.",
+  "To act in anger is to betray your own judgment.",
+  "Protect those who can't defend themselves above all else, then you can do as you will.",
+  "Creation and all its imperfections are divine, perversions of it will not be suffered.",
+];
+
+const beliefsTN = [
+  "Fuck all this shit, man.",
+  "Fate controls all things. Who am I to interfere?",
+  "...?",
+  "Beauty in all things. Right and wrong, good and evil. Respect your ability to indulge in what you please, and do not forget that others have that same privilege.",
+];
+
+const beliefsNE = [
+  "Take what you can. The only thing you can rely on is yourself.",
+  "Allies are great.. but you can find allies anywhere...",
+  "We all die alone. I don't care what prayers you say or what family you have. We. All. Die. Alone.",
+];
 //function for getting randomized sex
 function getRandomSex() {
   confirmedSex = sex[Math.floor(Math.random() * sex.length)];
@@ -796,7 +873,6 @@ function setRandomChildren() {
 }
 
 //function for changing pronouns from she/he
-
 function setOverall() {
   if (confirmedSex == "female") {
     return (document.getElementById("overall").innerText = "She");
@@ -818,6 +894,14 @@ function setBody() {
     return (document.getElementById("body").innerText = "She");
   } else {
     return (document.getElementById("body").innerText = "He");
+  }
+}
+
+function setSkin() {
+  if (confirmedSex == "female") {
+    return (document.getElementById("skin").innerText = "She");
+  } else {
+    return (document.getElementById("skin").innerText = "He");
   }
 }
 
@@ -866,6 +950,23 @@ function setBodyDescription() {
     getBodyDescription());
 }
 
+function getSkinTone() {
+  return skins[Math.floor(Math.random() * skins.length)];
+}
+
+function setSkinTone() {
+  return (document.getElementById("skinToneDescription").innerText =
+    getSkinTone());
+}
+
+function getUndertone() {
+  return undertones[Math.floor(Math.random() * undertones.length)];
+}
+
+function setUndertone() {
+  return (document.getElementById("undertoneDescription").innerText =
+    getUndertone());
+}
 //function for rolling dice
 function rollDice() {
   let roll = Math.floor(Math.random() * 6) + 1;
@@ -895,7 +996,145 @@ function setWisRoll() {
 function setChaRoll() {
   return (document.getElementById("cha").innerText = rollDice());
 }
-//updates page on click of generate button
+
+//function for randomizing alignment
+function getRandomAlignment() {
+  const confirmedAlignment =
+    alignments[Math.floor(Math.random() * alignments.length)];
+  return confirmedAlignment;
+}
+
+function setRandomAlignment() {
+  return (document.getElementById("alignment").innerText =
+    getRandomAlignment());
+}
+
+//setting text for alignment buttons
+function setLawGood() {
+  return (document.getElementById("alignment").innerText = "Lawful Good");
+}
+
+function setLawNeu() {
+  return (document.getElementById("alignment").innerText = "Lawful Neutral");
+}
+
+function setLawEvil() {
+  return (document.getElementById("alignment").innerText = "Lawful Evil");
+}
+
+function setNeuGood() {
+  return (document.getElementById("alignment").innerText = "Neutral Good");
+}
+
+function setNeu() {
+  return (document.getElementById("alignment").innerText = "True Neutral");
+}
+
+function setNeuEvil() {
+  return (document.getElementById("alignment").innerText = "Neutral Evil");
+}
+
+function setChaGood() {
+  return (document.getElementById("alignment").innerText = "Chaotic Good");
+}
+
+function setChaNeu() {
+  return (document.getElementById("alignment").innerText = "Chaotic Neutral");
+}
+
+function setChaEvil() {
+  return (document.getElementById("alignment").innerText = "Chaotic Evil");
+}
+
+//function for getting beliefs LAWFUL GOOD
+function getRandomBeliefLG() {
+  let confirmedBeliefLG =
+    beliefsLG[Math.floor(Math.random() * beliefsLG.length)];
+  return confirmedBeliefLG;
+}
+
+function setFirstBeliefLG() {
+  return (document.getElementById("firstBelief").innerText =
+    getRandomBeliefLG());
+}
+
+function setSecondBeliefLG() {
+  return (document.getElementById("secondBelief").innerText =
+    getRandomBeliefLG());
+}
+
+function setThirdBeliefLG() {
+  return (document.getElementById("thirdBelief").innerText =
+    getRandomBeliefLG());
+}
+
+//function for getting beliefs LAWFUL NEUTRAL
+function getRandomBeliefLN() {
+  let confirmedBeliefLN =
+    beliefsLN[Math.floor(Math.random() * beliefsLN.length)];
+  return confirmedBeliefLN;
+}
+
+function setFirstBeliefLN() {
+  return (document.getElementById("firstBelief").innerText =
+    getRandomBeliefLN());
+}
+
+function setSecondBeliefLN() {
+  return (document.getElementById("secondBelief").innerText =
+    getRandomBeliefLN());
+}
+
+function setThirdBeliefLN() {
+  return (document.getElementById("thirdBelief").innerText =
+    getRandomBeliefLN());
+}
+
+//function for getting beliefs LAWFUL EVIL
+function getRandomBeliefLE() {
+  let confirmedBeliefLE =
+    beliefsLE[Math.floor(Math.random() * beliefsLE.length)];
+  return confirmedBeliefLE;
+}
+
+function setFirstBeliefLE() {
+  return (document.getElementById("firstBelief").innerText =
+    getRandomBeliefLE());
+}
+
+function setSecondBeliefLE() {
+  return (document.getElementById("secondBelief").innerText =
+    getRandomBeliefLE());
+}
+
+function setThirdBeliefLE() {
+  return (document.getElementById("thirdBelief").innerText =
+    getRandomBeliefLE());
+}
+
+//function for getting beliefs NEUTRAL GOOD
+function getRandomBeliefNG() {
+  let confirmedBeliefNG =
+    beliefsNG[Math.floor(Math.random() * beliefsNG.length)];
+  return confirmedBeliefNG;
+}
+
+function setFirstBeliefNG() {
+  return (document.getElementById("firstBelief").innerText =
+    getRandomBeliefNG());
+}
+
+function setSecondBeliefNG() {
+  return (document.getElementById("secondBelief").innerText =
+    getRandomBeliefNG());
+}
+
+function setThirdBeliefNG() {
+  return (document.getElementById("thirdBelief").innerText =
+    getRandomBeliefNG());
+}
+
+//click of generate button
 document.querySelector(".generate").addEventListener("click", setRandomSex);
 document.querySelector(".generate").addEventListener("click", setRandomName);
 document.querySelector(".generate").addEventListener("click", setRandomAge);
@@ -928,3 +1167,43 @@ document.querySelector(".generate").addEventListener("click", setConRoll);
 document.querySelector(".generate").addEventListener("click", setIntRoll);
 document.querySelector(".generate").addEventListener("click", setWisRoll);
 document.querySelector(".generate").addEventListener("click", setChaRoll);
+document
+  .querySelector(".generate")
+  .addEventListener("click", setRandomAlignment);
+document.querySelector(".generate").addEventListener("click", setSkin);
+document.querySelector(".generate").addEventListener("click", setSkinTone);
+document.querySelector(".generate").addEventListener("click", setUndertone);
+document.querySelector(".generate").addEventListener("click", setSkinTone);
+document
+  .querySelector(".generate")
+  .addEventListener("click", setRandomAlignment);
+
+//click of randomize alignment button
+document
+  .querySelector(".randomize")
+  .addEventListener("click", setRandomAlignment);
+
+//click of alignment buttons to change label
+document.getElementById("lawGood").addEventListener("click", setLawGood);
+document.getElementById("lawNeu").addEventListener("click", setLawNeu);
+document.getElementById("lawEvil").addEventListener("click", setLawEvil);
+document.getElementById("neuGood").addEventListener("click", setNeuGood);
+document.getElementById("neu").addEventListener("click", setNeu);
+document.getElementById("neuEvil").addEventListener("click", setNeuEvil);
+document.getElementById("chaGood").addEventListener("click", setChaGood);
+document.getElementById("chaNeu").addEventListener("click", setChaNeu);
+document.getElementById("chaEvil").addEventListener("click", setChaEvil);
+
+//click of alignment buttons to change beliefs
+document.getElementById("lawGood").addEventListener("click", setFirstBeliefLG);
+document.getElementById("lawGood").addEventListener("click", setSecondBeliefLG);
+document.getElementById("lawGood").addEventListener("click", setThirdBeliefLG);
+document.getElementById("lawNeu").addEventListener("click", setFirstBeliefLN);
+document.getElementById("lawNeu").addEventListener("click", setSecondBeliefLN);
+document.getElementById("lawNeu").addEventListener("click", setThirdBeliefLN);
+document.getElementById("lawEvil").addEventListener("click", setFirstBeliefLE);
+document.getElementById("lawEvil").addEventListener("click", setSecondBeliefLE);
+document.getElementById("lawEvil").addEventListener("click", setThirdBeliefLE);
+document.getElementById("neuGood").addEventListener("click", setFirstBeliefNG);
+document.getElementById("neuGood").addEventListener("click", setSecondBeliefNG);
+document.getElementById("neuGood").addEventListener("click", setThirdBeliefLNG);
