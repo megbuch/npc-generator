@@ -591,6 +591,117 @@ const children = [
   3,
   4,
 ];
+
+const appearanceOverall = [
+  "is classically beautiful.",
+  "has a rather mysterious look.",
+  "looks a bit sad.",
+  "seems to be a very smiley person.",
+  "is quite pretty.",
+  "is rather exotic-looking.",
+  "is striking in appearance.",
+  "seems very intimidating.",
+  "can be a bit shy at first.",
+  "might have some self-esteem issues.",
+  "looks to be bright and vivacious.",
+  "has a warm and inviting demeanor.",
+  "is rather clumsy.",
+  "is absolutely ravishing.",
+  "flirts with everyone.",
+  "is annoyed about something.",
+  "seems stressed out.",
+  "is an unearthly beauty.",
+  "is a bit ugly, but that's okay.",
+  "seems to have a secret.",
+  "is definitely hiding something.",
+];
+
+const eyeColor = [
+  "dark brown",
+  "brown",
+  "light brown",
+  "hazel",
+  "green",
+  "olive",
+  "emerald",
+  "grey",
+  "light grey",
+  "dark grey",
+  "amber",
+  "hazel",
+  "onyx",
+  "sapphire",
+  "honey",
+];
+
+const hairColor = [
+  "jet black",
+  "black",
+  "indigo",
+  "dark brown",
+  "honey brown",
+  "honey blonde",
+  "dirty blonde",
+  "platinum blonde",
+  "white",
+  "greying",
+  "thinning",
+  "red",
+  "auburn",
+  "maroon",
+  "chocolate brown",
+  "golden blonde",
+  "coppery",
+  "cool blonde",
+  "warm blonde",
+  "cool brown",
+  "warm brown",
+  "violet",
+  "pink",
+  "pastel blue",
+  "pastel pink",
+];
+
+const hairStyle = [
+  "is kept neatly in a bun.",
+  "has a slightly wavy texture.",
+  "is pulled into an elegant french twist.",
+  "has been freshly shaven.",
+  "is short and wildly sticking up.",
+  "looks to never have been washed.",
+  "is tightly braided.",
+  "is styled in cornrows.",
+  "is in a half-pony.",
+  "is pulled into a high ponytail.",
+  "is held in a loose pony.",
+  "is cut at the shoulders.",
+  "has a pixie cut.",
+  "is long and flowing.",
+  "is just incredible. Like.. is this hair even real?",
+];
+
+const body = [
+  "has a fat build.",
+  "is quite petite.",
+  "is pretty muscular.",
+  "has bulging muscles.",
+  "is a bit lanky.",
+  "looks like a Greek god.",
+  "would beat you in a fight.",
+  "would definitely lose to you in a fight.",
+  "has poor posture.",
+  "has excellent posture.",
+  "is really, really tall.",
+  "is a bit on the short side.",
+  "could probably fit in your pocket.",
+  "has great legs.",
+  "is slightly overweight.",
+  "is a bit chubby.",
+  "is curvy with a small waist.",
+  "has broad shoulders.",
+  "has a bit of a beer belly.",
+];
+
 //function for getting randomized sex
 function getRandomSex() {
   confirmedSex = sex[Math.floor(Math.random() * sex.length)];
@@ -710,7 +821,81 @@ function setBody() {
   }
 }
 
-//updates entire page on click of generate button
+//functions for updating appearance
+function getOverallDescription() {
+  return appearanceOverall[
+    Math.floor(Math.random() * appearanceOverall.length)
+  ];
+}
+
+function setOverallDescription() {
+  return (document.getElementById("overallDescription").innerText =
+    getOverallDescription());
+}
+
+function getEyes() {
+  return eyeColor[Math.floor(Math.random() * eyeColor.length)];
+}
+
+function setEyes() {
+  return (document.getElementById("eyeColor").innerText = getEyes());
+}
+
+function getHair() {
+  return hairColor[Math.floor(Math.random() * hairColor.length)];
+}
+
+function setHair() {
+  return (document.getElementById("hairColor").innerText = getHair());
+}
+
+function getStyle() {
+  return hairStyle[Math.floor(Math.random() * hairStyle.length)];
+}
+
+function setStyle() {
+  return (document.getElementById("hairStyle").innerText = getStyle());
+}
+
+function getBodyDescription() {
+  return body[Math.floor(Math.random() * body.length)];
+}
+
+function setBodyDescription() {
+  return (document.getElementById("bodyDescription").innerText =
+    getBodyDescription());
+}
+
+//function for rolling dice
+function rollDice() {
+  let roll = Math.floor(Math.random() * 6) + 1;
+  return roll * 3;
+}
+
+function setStrRoll() {
+  return (document.getElementById("str").innerText = rollDice());
+}
+
+function setDexRoll() {
+  return (document.getElementById("dex").innerText = rollDice());
+}
+
+function setConRoll() {
+  return (document.getElementById("con").innerText = rollDice());
+}
+
+function setIntRoll() {
+  return (document.getElementById("int").innerText = rollDice());
+}
+
+function setWisRoll() {
+  return (document.getElementById("wis").innerText = rollDice());
+}
+
+function setChaRoll() {
+  return (document.getElementById("cha").innerText = rollDice());
+}
+//updates page on click of generate button
 document.querySelector(".generate").addEventListener("click", setRandomSex);
 document.querySelector(".generate").addEventListener("click", setRandomName);
 document.querySelector(".generate").addEventListener("click", setRandomAge);
@@ -722,10 +907,24 @@ document
 document
   .querySelector(".generate")
   .addEventListener("click", setRandomRelationship);
-console.log(confirmedSex);
 document
   .querySelector(".generate")
   .addEventListener("click", setRandomChildren);
 document.querySelector(".generate").addEventListener("click", setOverall);
 document.querySelector(".generate").addEventListener("click", setFace);
 document.querySelector(".generate").addEventListener("click", setBody);
+document
+  .querySelector(".generate")
+  .addEventListener("click", setOverallDescription);
+document.querySelector(".generate").addEventListener("click", setEyes);
+document.querySelector(".generate").addEventListener("click", setHair);
+document.querySelector(".generate").addEventListener("click", setStyle);
+document
+  .querySelector(".generate")
+  .addEventListener("click", setBodyDescription);
+document.querySelector(".generate").addEventListener("click", setStrRoll);
+document.querySelector(".generate").addEventListener("click", setDexRoll);
+document.querySelector(".generate").addEventListener("click", setConRoll);
+document.querySelector(".generate").addEventListener("click", setIntRoll);
+document.querySelector(".generate").addEventListener("click", setWisRoll);
+document.querySelector(".generate").addEventListener("click", setChaRoll);

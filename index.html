@@ -35,15 +35,14 @@
         </div>
         <div class="appearance">
           <h4>Appearance</h4>
-          <p class="labels">
-            Overall: <span id="overall">She</span> is 'classically beautiful'.
-          </p>
-          <p class="labels">
-            Face:
-            <span id="face">She</span> has 'an angular' face, with 'blue' eyes
-            and 'auburn' hair, which is 'kept neatly in a bun'.
-          </p>
-          <p class="labels">Body: <span id="body">She</span> is quite tall.</p>
+          <p class="labels">Overall:</p>
+          <span id="overall"></span> <span id="overallDescription"></span>
+          <p class="labels">Face:</p>
+          <span id="face"></span> has <span id="eyeColor"></span> eyes and
+          <span id="hairColor"></span> hair, which
+          <span id="hairStyle"></span>
+          <p class="labels">Body:</p>
+          <span id="body"></span> <span id="bodyDescription"></span>
         </div>
       </div>
 
@@ -51,6 +50,24 @@
       <div class="section ability-alignment">
         <div class="subsection abilities">
           <h2>Ability Scores</h2>
+          <div class="ability-scores-row">
+            <div class="ability-scores-column">
+              <p>STR</p>
+              <p>DEX</p>
+              <p>CON</p>
+              <p>INT</p>
+              <p>WIS</p>
+              <p>CHA</p>
+            </div>
+            <div class="ability-scores-column">
+              <p id="str"></p>
+              <p id="dex"></p>
+              <p id="con"></p>
+              <p id="int"></p>
+              <p id="wis"></p>
+              <p id="cha"></p>
+            </div>
+          </div>
         </div>
         <div class="subsection alignment">
           <h2>Alignment</h2>

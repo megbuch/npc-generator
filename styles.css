@@ -22,10 +22,17 @@ p {
   text-align: left;
 }
 
+span {
+  color: white;
+}
+
 h3 {
   font-size: 2rem;
 }
 
+h4 {
+  font-size: 1.1rem;
+}
 /*  section boxes  */
 .container {
   display: flex;
@@ -33,12 +40,12 @@ h3 {
   justify-content: center;
   align-items: center;
   gap: 40px;
-  padding: 2em;
+  padding: 0.2em;
 }
 
 .section {
   background-color: rgb(255, 251, 240, 0.1);
-  height: 80vh;
+  height: 95vh;
   width: 22vw;
   border-radius: 20px;
   padding: 2em;
@@ -79,6 +86,23 @@ span {
 /*  middle section  */
 
 /* dropdown alignment button & top button */
+
+.ability-scores-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.ability-scores-column {
+  display: flex;
+  flex-direction: column;
+}
+.ability-scores-column p {
+  font-weight: 900;
+  font-size: 1.1rem;
+  line-height: 0.3rem;
+}
+
 .btn {
   border: 0;
   border-radius: 8px;
