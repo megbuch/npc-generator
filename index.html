@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>NPC Generator</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>NPC Generator</h1>
+      <button class="btn generate">Generate an NPC 🎲</button>
+    </div>
+    <div class="container">
+      <!--LEFT SECTION-->
+      <div class="section about">
+        <div class="info">
+          <h3 id="name">Name</h3>
+          <p class="labels">Sex: <span id="sex">Female</span></p>
+          <p class="labels">Age: <span id="age">Very Old</span></p>
+          <p class="labels">Race: <span id="race">Human</span></p>
+          <p class="labels">Occupation: <span id="job">Educator</span></p>
+        </div>
+        <div class="family">
+          <h4>Family Info</h4>
+          <p class="labels">Orientation: <span>Straight</span></p>
+          <p class="labels">Relationship Status: <span>Married</span></p>
+          <p class="labels">Children: <span>3</span></p>
+        </div>
+        <div class="appearance">
+          <h4>Appearance</h4>
+          <p class="labels">
+            Overall: <span>She is 'classically beautiful'.</span>
+          </p>
+          <p class="labels">
+            Face:
+            <span
+              >'She' has 'an angular' face, with 'blue' eyes and 'auburn' hair,
+              which is 'kept neatly in a bun'.</span
+            >
+          </p>
+          <p class="labels">Body: <span>She is quite tall.</span></p>
+        </div>
+      </div>
+
+      <!--MIDDLE SECTION-->
+      <div class="section ability-alignment">
+        <div class="subsection abilities">
+          <h2>Ability Scores</h2>
+        </div>
+        <div class="subsection alignment">
+          <h2>Alignment</h2>
+          <div class="dropdown">
+            <button class="btn">Choose an Alignment</button>
+            <div class="dropdown-content">
+              <a href="#">Lawful Good</a>
+              <a href="#">Lawful Neutral</a>
+              <a href="#">Lawful Evil</a>
+              <a href="#">Neutral Good</a>
+              <a href="#">True Neutral</a>
+              <a href="#">Neutral Evil</a>
+              <a href="#">Chaotic Good</a>
+              <a href="#">Chaotic Neutral</a>
+              <a href="#">Chaotic Evil</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--RIGHT SECTION-->
+      <div class="section traits-quirks">
+        <div class="subsection traits">
+          <h2>Traits</h2>
+          <p>Please select an alignment option!</p>
+        </div>
+        <div class="subsection quirks">
+          <h2>Quirks</h2>
+        </div>
+        <div class="subsection plot-hook">
+          <h2>Plot Hook</h2>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #252422;
+}
+
+body,
+button,
+.btn {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  text-align: center;
+  color: white;
+}
+
+p {
+  text-align: left;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+/*  section boxes  */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 2em;
+}
+
+.section {
+  background-color: rgb(255, 251, 240, 0.1);
+  height: 80vh;
+  width: 22vw;
+  border-radius: 20px;
+  padding: 2em;
+}
+
+.ability-alignment {
+  width: 18vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 2em;
+}
+
+.subsection {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  padding-bottom: 5em;
+}
+
+/*  left section  */
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.labels {
+  font-weight: 600;
+  color: #eb5e28;
+}
+
+span {
+  font-weight: 100;
+  color: white;
+}
+
+/*  middle section  */
+
+/* dropdown alignment button & top button */
+.btn {
+  border: 0;
+  border-radius: 8px;
+  background-color: #eb5e28;
+  width: 100%;
+  height: 60px;
+  font-size: 1em;
+  transition-duration: 0.5s;
+}
+
+.generate {
+  width: 20%;
+  height: 60px;
+}
+
+.btn:hover {
+  background-color: #b93500;
+}
+
+.dropdown {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+  column-count: 3;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #b93500;
+}
+
+/*  right section  */
+.traits-quirks {
+  display: flex;
+  flex-direction: column;
+}
