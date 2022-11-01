@@ -58,7 +58,7 @@ h4 {
   justify-content: center;
 }
 
-.ability-alignment {
+.ability-personality {
   width: 18vw;
   display: flex;
   flex-direction: column;
@@ -67,6 +67,11 @@ h4 {
   gap: 1em;
 }
 
+.beliefs-alignment {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .subsection {
   display: flex;
   flex-direction: column;
@@ -97,8 +102,12 @@ span {
   width: 100%;
 }
 
+.personality,
+.plot-hook {
+  display: inline-block;
+}
+
 .generate {
-  width: 20%;
   height: 60px;
 }
 
@@ -136,11 +145,13 @@ span {
   transition-duration: 0.5s;
 }
 
-.randomize {
-  justify-content: center;
-  width: 95%;
-  height: 15%;
+button.btn.generate {
+  width: 20%;
 }
+button.btn.randomize {
+  width: 80%;
+}
+
 .align {
   width: 30%;
 }

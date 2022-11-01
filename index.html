@@ -36,21 +36,23 @@
         <div class="appearance">
           <h4>Appearance</h4>
           <p class="labels">Overall:</p>
-          <span id="overall"></span> <span id="overallDescription"></span>
+          <span class="pronoun"></span>
+          <span id="overallDescription"></span>
           <p class="labels">Face:</p>
-          <span id="face"></span> has <span id="eyeColor"></span> eyes and
+          <span class="pronoun"></span> has <span id="eyeColor"></span> eyes and
           <span id="hairColor"></span> hair, which
           <span id="hairStyle"></span>
           <p class="labels">Body:</p>
-          <span id="skin"></span> has
+          <span class="pronoun"></span> has
           <span id="skinToneDescription"></span> skin with a
           <span id="undertoneDescription"></span> undertone.
-          <span id="body"></span> <span id="bodyDescription"></span>
+          <span class="pronoun"></span>
+          <span id="bodyDescription"></span>
         </div>
       </div>
 
       <!--MIDDLE SECTION-->
-      <div class="section ability-alignment">
+      <div class="section ability-personality">
         <div class="subsection abilities">
           <h3>Ability Scores</h3>
           <div class="ability-scores-row">
@@ -72,6 +74,18 @@
             </div>
           </div>
         </div>
+        <div class="subsection personality">
+          <h3>Personality</h3>
+          <span class="pronoun"></span> <span id="firstTrait"></span>
+        </div>
+        <div class="subsection plot-hook">
+          <h3>Plot Hook</h3>
+          <span class="pronoun"></span> <span id="plotHook"></span>
+        </div>
+      </div>
+
+      <!--RIGHT SECTION-->
+      <div class="section beliefs-alignment">
         <div class="subsection alignment">
           <h3>Alignment</h3>
           <div class="alignments">
@@ -88,24 +102,16 @@
             <button id="chaEvil" class="btn align">Chaotic Evil</button>
           </div>
         </div>
-      </div>
-
-      <!--RIGHT SECTION-->
-      <div class="section beliefs-personality">
         <div class="subsection beliefs">
           <h3>Beliefs</h3>
           <p id="firstBelief">Please select an alignment option!</p>
           <p id="secondBelief">Please select an alignment option!</p>
           <p id="thirdBelief">Please select an alignment option!</p>
         </div>
-        <div class="subsection personality">
-          <h3>Personality</h3>
-        </div>
-        <div class="subsection plot-hook">
-          <h3>Plot Hook</h3>
-        </div>
       </div>
     </div>
   </body>
   <script src="script.js"></script>
 </html>
+
+<!--change beliefs from ID to class-->
