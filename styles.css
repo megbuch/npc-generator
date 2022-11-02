@@ -1,3 +1,6 @@
+/* add media queries for responsive mobile design 
+add color themes? */
+
 *,
 *::before,
 *::after {
@@ -32,10 +35,11 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
+  text-align: center;
 }
 
 h4 {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   padding-top: 0;
 }
 
@@ -135,11 +139,24 @@ span {
   font-size: 0.9rem;
 }
 
+.personality,
+.plot-hook {
+  text-align: left;
+}
+
+/*  right section  */
+
+.beliefs {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 40%;
+}
+
 .btn {
   border: 0;
   border-radius: 8px;
   background-color: #eb5e28;
-  width: 50%;
+  width: 100px;
   height: 60px;
   font-size: 1em;
   transition-duration: 0.5s;
@@ -147,6 +164,7 @@ span {
 
 button.btn.generate {
   width: 20%;
+  height: 60px;
 }
 button.btn.randomize {
   width: 80%;
@@ -158,6 +176,27 @@ button.btn.randomize {
 
 .btn:hover {
   background-color: #b93500;
+  height: 60px;
+  width: 120px;
 }
 
-/*  right section  */
+.align:focus {
+  background-color: #b93500;
+  border: 1px solid white;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

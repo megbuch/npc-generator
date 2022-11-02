@@ -1,7 +1,12 @@
 "use strict";
 
+//make surnames based on race
+//create religion/deity section based on alignment
+
 //arrays
 const sex = ["female", "male"];
+
+let fullName = "";
 
 let confirmedSex = "";
 
@@ -49,14 +54,15 @@ function getRandomName() {
   getRandomSex();
   setRandomSex();
   if (confirmedSex == "female") {
-    return `${femaleNames[Math.floor(Math.random() * femaleNames.length)]} ${
-      lastNames[Math.floor(Math.random() * lastNames.length)]
-    }`;
+    fullName = `${
+      femaleNames[Math.floor(Math.random() * femaleNames.length)]
+    } ${lastNames[Math.floor(Math.random() * lastNames.length)]}`;
   } else if (confirmedSex == "male") {
-    return `${maleNames[Math.floor(Math.random() * maleNames.length)]} ${
+    fullName = `${maleNames[Math.floor(Math.random() * maleNames.length)]} ${
       lastNames[Math.floor(Math.random() * lastNames.length)]
     }`;
   }
+  return fullName;
 }
 
 function setRandomSex() {
@@ -68,7 +74,9 @@ function setRandomSex() {
 }
 
 function setRandomName() {
-  return (document.getElementById("name").innerText = getRandomName());
+  getRandomName();
+  document.getElementById("name").innerText = fullName;
+  document.getElementById("fullName").innerText = fullName;
 }
 
 //function for getting randomized age

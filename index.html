@@ -15,39 +15,46 @@
       <h1>NPC Generator</h1>
       <button class="btn generate">Generate an NPC 🎲</button>
     </div>
+
     <div class="container">
       <!--LEFT SECTION-->
       <div class="section about">
         <div class="info">
-          <h2 id="name">Name</h2>
-          <p class="labels">Sex: <span id="sex"></span></p>
-          <p class="labels">Age: <span id="age"></span></p>
-          <p class="labels">Race: <span id="race"></span></p>
-          <p class="labels">Occupation: <span id="job"></span></p>
+          <h2 id="name">Amelie Warmane</h2>
+          <p class="labels">Sex: <span id="sex">Female</span></p>
+          <p class="labels">Age: <span id="age">Young Adult</span></p>
+          <p class="labels">Race: <span id="race">Human</span></p>
+          <p class="labels">Occupation: <span id="job">Wine Merchant</span></p>
         </div>
         <div class="family">
           <h4>Family Info</h4>
-          <p class="labels">Orientation: <span id="orientation"></span></p>
           <p class="labels">
-            Relationship Status: <span id="relationship"></span>
+            Orientation: <span id="orientation">Straight</span>
           </p>
-          <p class="labels">Children: <span id="children"></span></p>
+          <p class="labels">
+            Relationship Status: <span id="relationship">Married</span>
+          </p>
+          <p class="labels">Children: <span id="children">2</span></p>
         </div>
         <div class="appearance">
           <h4>Appearance</h4>
           <p class="labels">Overall:</p>
-          <span class="pronoun"></span>
-          <span id="overallDescription"></span>
+          <span class="pronoun">She</span>
+          <span id="overallDescription"
+            >has gorgeous eyes. You'll get lost in them if you're not
+            careful.</span
+          >
           <p class="labels">Face:</p>
-          <span class="pronoun"></span> has <span id="eyeColor"></span> eyes and
-          <span id="hairColor"></span> hair, which
-          <span id="hairStyle"></span>
+          <span class="pronoun">She</span> has
+          <span id="eyeColor">pale blue</span> eyes and
+          <span id="hairColor">dark brown</span> hair, which
+          <span id="hairStyle">is pulled into an elegant french twist.</span>
           <p class="labels">Body:</p>
-          <span class="pronoun"></span> has
-          <span id="skinToneDescription"></span> skin with a
-          <span id="undertoneDescription"></span> undertone.
-          <span class="pronoun"></span>
-          <span id="bodyDescription"></span>
+          <span class="pronoun">She</span> has
+          <span id="skinToneDescription">medium</span> skin with a
+          <span id="undertoneDescription">pinkish</span> undertone.
+          <span class="pronoun">She</span>
+          <span id="bodyDescription">is quite petite.</span>
         </div>
       </div>
 
@@ -65,24 +72,35 @@
               <p>CHA</p>
             </div>
             <div class="ability-scores-column">
-              <p id="str"></p>
-              <p id="dex"></p>
-              <p id="con"></p>
-              <p id="int"></p>
-              <p id="wis"></p>
-              <p id="cha"></p>
+              <p id="str">11</p>
+              <p id="dex">12</p>
+              <p id="con">5</p>
+              <p id="int">9</p>
+              <p id="wis">11</p>
+              <p id="cha">16</p>
             </div>
           </div>
         </div>
         <div class="subsection personality">
           <h3>Personality</h3>
-          <span class="pronoun"></span> <span id="firstTrait"></span>
+          <span id="fullName">Amelie Warmane</span>
+          <span id="firstTrait"
+            >is a bit absent-minded. Often gets lost in daydreams and forgets
+            about the task at hand.</span
+          >
           <br /><br />
-          <span class="pronoun"></span> <span id="secondTrait"></span>
+          <span class="pronoun">She</span>
+          <span id="secondTrait"
+            >is loved by family and friends alike. A genuinely good
+            person.</span
+          >
         </div>
         <div class="subsection plot-hook">
           <h3>Plot Hook</h3>
-          <span class="pronoun"></span> <span id="plotHook"></span>
+          <span class="pronoun">She</span>
+          <span id="plotHook"
+            >has heard rumor of a distant land of abundant riches.</span
+          >
         </div>
       </div>
 
@@ -92,7 +110,7 @@
           <h3>Alignment</h3>
           <div class="alignments">
             <button class="btn randomize">Randomize Alignment 🎲</button>
-            <h4 id="alignment">Lawful Good</h4>
+            <h4 id="alignment">Neutral Good</h4>
             <button id="lawGood" class="btn align">Lawful Good</button>
             <button id="lawNeu" class="btn align">Lawful Neutral</button>
             <button id="lawEvil" class="btn align">Lawful Evil</button>
@@ -106,14 +124,17 @@
         </div>
         <div class="subsection beliefs">
           <h3>Beliefs</h3>
-          <p id="firstBelief">Please select an alignment option!</p>
-          <p id="secondBelief">Please select an alignment option!</p>
-          <p id="thirdBelief">Please select an alignment option!</p>
+          <p id="firstBelief">"You don't need a reason to help people."</p>
+          <p id="secondBelief">
+            "To act in anger is to betray your own judgment."
+          </p>
+          <p id="thirdBelief">
+            "Protect those who can't defend themselves above all else, then you
+            can do as you will."
+          </p>
         </div>
       </div>
     </div>
   </body>
   <script type="module" src="script.js"></script>
 </html>
-
-<!--change beliefs from ID to class-->
