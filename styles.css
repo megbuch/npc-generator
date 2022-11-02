@@ -291,4 +291,10 @@ a {
   button.btn {
     min-width: 70px;
   }
+
+  button.align:hover {
+    background: #b93500;
+    height: 60px;
+    width: 100px;
+  }
 }
