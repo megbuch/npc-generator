@@ -5,6 +5,7 @@ add color themes? */
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: "Poppins";
 }
 
 html {
@@ -16,31 +17,24 @@ button,
 .btn {
   margin: 0;
   padding: 0;
-  font-family: "Poppins";
-  text-align: center;
   color: white;
+  font-size: 0.98rem;
 }
 
-p {
+p,
+span {
   text-align: left;
 }
 
-span {
-  color: white;
-}
-
-h2 {
+h2,
+h3,
+h4 {
   font-size: 2rem;
+  text-align: center;
 }
 
 h3 {
   font-size: 1.5rem;
-  text-align: center;
-}
-
-h4 {
-  font-size: 1.5rem;
-  padding-top: 0;
 }
 
 /*  section boxes  */
@@ -55,15 +49,15 @@ h4 {
 
 .section {
   background-color: rgb(255, 251, 240, 0.1);
-  height: 95vh;
-  width: 22vw;
+  height: 60rem;
+  width: 25rem;
   border-radius: 18px;
   padding: 2em;
   justify-content: center;
 }
 
 .ability-personality {
-  width: 18vw;
+  min-width: 20vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -76,6 +70,7 @@ h4 {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .subsection {
   display: flex;
   flex-direction: column;
@@ -94,12 +89,11 @@ h4 {
 }
 
 span {
-  font-weight: 100;
   color: white;
+  font-weight: 100;
 }
 
 /*  middle section  */
-
 /* alignment buttons & top button */
 
 #alignment {
@@ -146,45 +140,66 @@ span {
 
 /*  right section  */
 
+h4 {
+  font-size: 1.5rem;
+  padding-top: 0;
+}
+
+#alignment {
+  color: #ff986f;
+}
+
+/* button all */
+button.btn {
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(to right, #eb5e28, #f0433d);
+  min-width: 100px;
+  min-height: 60px;
+  font-size: 1em;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+button.btn:hover {
+  background: linear-gradient(to right, #db5520, #df4a30);
+}
+
+/* button generate */
+button.generate {
+  min-width: 300px;
+  min-height: 60px;
+}
+
+/* button randomize */
+button.randomize {
+  width: 80%;
+  background: linear-gradient(to right, #eb5e28, #e7543a);
+}
+
+/* small buttons */
+button.align {
+  width: 30%;
+  background: #eb5e28;
+}
+
+button.align:focus {
+  background: #b93500;
+  border: 1px solid white;
+}
+
+button.align:hover {
+  background: #b93500;
+  height: 60px;
+  width: 120px;
+}
+
+/* scroll bar */
 .beliefs {
   overflow-y: scroll;
   overflow-x: hidden;
   height: 40%;
 }
-
-.btn {
-  border: 0;
-  border-radius: 8px;
-  background-color: #eb5e28;
-  width: 100px;
-  height: 60px;
-  font-size: 1em;
-  transition-duration: 0.5s;
-}
-
-button.btn.generate {
-  width: 20%;
-  height: 60px;
-}
-button.btn.randomize {
-  width: 80%;
-}
-
-.align {
-  width: 30%;
-}
-
-.btn:hover {
-  background-color: #b93500;
-  height: 60px;
-  width: 120px;
-}
-
-.align:focus {
-  background-color: #b93500;
-  border: 1px solid white;
-}
-
 ::-webkit-scrollbar {
   width: 3px;
 }
@@ -199,4 +214,81 @@ button.btn.randomize {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* copyright */
+.copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  margin: 1;
+}
+
+a {
+  color: #eb5e28;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .container.top {
+    gap: 2rem;
+    flex-direction: row;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .section {
+    max-height: 50rem;
+    min-width: 80%;
+  }
+
+  .body {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 620px) {
+  h1 {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  .container.top {
+    gap: 1rem;
+  }
+
+  button.generate {
+    min-width: 200px;
+    min-height: 20px;
+  }
+
+  .section {
+    max-height: 50rem;
+    min-width: 80%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .container.top {
+    margin: 0.5rem;
+    gap: 1rem;
+  }
+  .section {
+    min-height: 54rem;
+    max-width: 22rem;
+    justify-content: space-between;
+  }
+
+  .beliefs-alignment {
+    max-height: 85rem;
+  }
+
+  body {
+    font-size: 0.9rem;
+  }
+
+  button.btn {
+    min-width: 70px;
+  }
 }

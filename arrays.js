@@ -922,6 +922,17 @@ const beliefsCE = [
   `"I stand defiant of those who claim to 'represent' people. People is a term used for animals who cannot act for themselves."`,
   `"Greed is good."`,
   `"If it serves me, that's all I need to know."`,
+  `"They can't be bought, bullied, reasoned or negotiated with. Some men just want to watch the world burn."`,
+  `"I do what I do, when I choose, why I wish. I answer to no one."`,
+  `"Destruction isn't supposed to make sense! It's only fun when it's senseless!"`,
+  `"Kill everyone now! Condone first degree murder! Advocate cannibalism! Eat shit! Filth are my politics! Filth is my life!"`,
+  `"Being alive is wonderful! And the most wonderful thing about life is taking it away from other people."`,
+  `"I love only myself. If all other people exist out there to magnify that love, then there is no more splendid world than this one. They allow me to experience the joy of living... for as long as there are people out there to kill... then I will not cease to exist."`,
+  `"Because once I didn't care about the rules anymore, I had all the power. We all have it inside of us. We just got to let it out. And I can show you how..."`,
+  `"Sometimes the only way to fix a system is to burn it down and start from scratch. But I'm not interested in the 'fixing' bit."`,
+  `"Schemers trying to control their little worlds. I'm not a schemer. I try to show the schemers how pathetic their attempts to control things really are"`,
+  `"That which we cannot destroy, we will defile! Those we cannot defeat will know only despair!"`,
+  `"Tear down creation, just to see if you can."`,
 ];
 
 const personalityTraits = [

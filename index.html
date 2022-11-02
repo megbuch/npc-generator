@@ -11,7 +11,7 @@
     />
   </head>
   <body>
-    <div class="container">
+    <div class="container top">
       <h1>NPC Generator</h1>
       <button class="btn generate">Generate an NPC 🎲</button>
     </div>
@@ -38,18 +38,20 @@
         </div>
         <div class="appearance">
           <h4>Appearance</h4>
-          <p class="labels">Overall:</p>
+          <span class="labels">Overall:</span>
           <span class="pronoun">She</span>
           <span id="overallDescription"
             >has gorgeous eyes. You'll get lost in them if you're not
             careful.</span
           >
-          <p class="labels">Face:</p>
+          <br /><br />
+          <span class="labels">Face:</span>
           <span class="pronoun">She</span> has
           <span id="eyeColor">pale blue</span> eyes and
           <span id="hairColor">dark brown</span> hair, which
           <span id="hairStyle">is pulled into an elegant french twist.</span>
-          <p class="labels">Body:</p>
+          <br /><br />
+          <span class="labels">Body:</span>
           <span class="pronoun">She</span> has
           <span id="skinToneDescription">medium</span> skin with a
           <span id="undertoneDescription">pinkish</span> undertone.
@@ -135,6 +137,11 @@
         </div>
       </div>
     </div>
+    <p class="copyright">
+      Copyright © 2022
+      <a href="https://twitter.com/thebardIRL">Meghan Bucher</a> /
+      <a href="https://github.com/bardIRL">bardIRL</a>
+    </p>
   </body>
   <script type="module" src="script.js"></script>
 </html>
