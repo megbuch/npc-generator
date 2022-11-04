@@ -27,9 +27,9 @@ import {
   hairColor,
   hairStyle,
   body,
+  clothing,
   alignments,
   skins,
-  undertones,
   beliefsLG,
   beliefsLN,
   beliefsLE,
@@ -211,14 +211,13 @@ function setSkinTone() {
     getSkinTone());
 }
 
-//undertone description
-function getUndertone() {
-  return undertones[Math.floor(Math.random() * undertones.length)];
+//clothing description
+function getClothing() {
+  return clothing[Math.floor(Math.random() * clothing.length)];
 }
 
-function setUndertone() {
-  return (document.getElementById("undertoneDescription").innerText =
-    getUndertone());
+function setClothing() {
+  return (document.getElementById("clothing").innerText = getClothing());
 }
 
 //function for rolling dice
@@ -456,8 +455,7 @@ document.querySelector(".generate").addEventListener("click", setEyes);
 document.querySelector(".generate").addEventListener("click", setHair);
 document.querySelector(".generate").addEventListener("click", setStyle);
 document.querySelector(".generate").addEventListener("click", setSkinTone);
-document.querySelector(".generate").addEventListener("click", setUndertone);
-document.querySelector(".generate").addEventListener("click", setSkinTone);
+document.querySelector(".generate").addEventListener("click", setClothing);
 
 document
   .querySelector(".generate")

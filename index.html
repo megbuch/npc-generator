@@ -11,23 +11,21 @@
     />
   </head>
   <body>
-    <div class="container top">
+    <div class="top">
       <h1>NPC Generator</h1>
-      <button class="btn generate">Generate an NPC 🎲</button>
+      <button class="btn generate">Generate NPC 🎲</button>
+      <button class="btn randomize">Re-roll Alignment 🎲</button>
     </div>
 
     <div class="container">
       <!--LEFT SECTION-->
       <div class="section about">
+        <h2 id="name">Amelie Warmane</h2>
         <div class="info">
-          <h2 id="name">Amelie Warmane</h2>
           <p class="labels">Sex: <span id="sex">Female</span></p>
           <p class="labels">Age: <span id="age">Young Adult</span></p>
           <p class="labels">Race: <span id="race">Human</span></p>
           <p class="labels">Occupation: <span id="job">Wine Merchant</span></p>
-        </div>
-        <div class="family">
-          <h4>Family Info</h4>
           <p class="labels">
             Orientation: <span id="orientation">Straight</span>
           </p>
@@ -37,26 +35,22 @@
           <p class="labels">Children: <span id="children">2</span></p>
         </div>
         <div class="appearance">
-          <h4>Appearance</h4>
-          <span class="labels">Overall:</span>
-          <span class="pronoun">She</span>
+          <h3>Appearance</h3>
+          <span id="fullName">Amelie Warmane</span>
           <span id="overallDescription"
             >has gorgeous eyes. You'll get lost in them if you're not
             careful.</span
           >
-          <br /><br />
-          <span class="labels">Face:</span>
+          <span class="pronoun">She</span>
+          <span id="bodyDescription">is quite petite.</span><br /><br />
           <span class="pronoun">She</span> has
-          <span id="eyeColor">pale blue</span> eyes and
-          <span id="hairColor">dark brown</span> hair, which
+          <span id="skinToneDescription">medium</span> skin,
+          <span id="eyeColor">pale blue</span> eyes, and
+          <span id="hairColor">dark brown</span> hair. It
           <span id="hairStyle">is pulled into an elegant french twist.</span>
           <br /><br />
-          <span class="labels">Body:</span>
-          <span class="pronoun">She</span> has
-          <span id="skinToneDescription">medium</span> skin with a
-          <span id="undertoneDescription">pinkish</span> undertone.
           <span class="pronoun">She</span>
-          <span id="bodyDescription">is quite petite.</span>
+          <span id="clothing">a crimson silk cloak.</span>
         </div>
       </div>
 
@@ -111,8 +105,6 @@
         <div class="subsection alignment">
           <h3>Alignment</h3>
           <div class="alignments">
-            <button class="btn randomize">Randomize Alignment 🎲</button>
-            <h4 id="alignment">Neutral Good</h4>
             <button id="lawGood" class="btn align">Lawful Good</button>
             <button id="lawNeu" class="btn align">Lawful Neutral</button>
             <button id="lawEvil" class="btn align">Lawful Evil</button>
@@ -124,6 +116,7 @@
             <button id="chaEvil" class="btn align">Chaotic Evil</button>
           </div>
         </div>
+        <h3 id="alignment">Neutral Good</h3>
         <div class="subsection beliefs">
           <h3>Beliefs</h3>
           <p id="firstBelief">"You don't need a reason to help people."</p>
