@@ -788,7 +788,7 @@ const clothing = [
   "is wearing a long, suede coat with a western-style hat.",
   "wears a beautifully embroidered lime-green robe that would lend itself towards a position of some station.",
   "wears an electrum amulet with a sapphire - the size of an eye - fixed glaring in your direction.",
-  "wears stained, threadbaren linens in as if it had been dragged through gutters or troughs.",
+  "wears stained, threadbare linens. They look to have been dragged through gutters or troughs.",
   "wears a simple blue shirt that drapes to their knees. A large, black leather belt sits atop, fixed tightly around their waist as a fashion statement.",
   "wears a gold signet ring. Upon closer inspection there are runes around the onyx in the middle you haven't seen in this age.",
   "wears a jacket that has several utilitarian pockets along with some brown cloth pants.",
@@ -824,18 +824,6 @@ const skins = [
   "medium",
   "olive",
   "deep",
-];
-
-const undertones = [
-  "pinkish",
-  "blueish",
-  "greenish",
-  "reddish",
-  "purplish",
-  "yellowish",
-  "warm",
-  "cool",
-  "neutral",
 ];
 
 const beliefsLG = [
@@ -1019,7 +1007,7 @@ const personalityTraits = [
 const plotHooks = [
   "stumbled upon a curious note by the docks which featured glyphs of various sizes, and seeks to know the origin.",
   "is having an affair with a town guard.",
-  "is cursed with lycanthropy and wants to cure it.",
+  "is cursed with Lycanthropy and wants to cure it.",
   "has spotted hooded figures entering the neighbor's house every night.",
   "sells potions of questionable origin at the night market for some extra coin.",
   "seeks to die an honorable and glorious death by duel.",
@@ -1032,7 +1020,7 @@ const plotHooks = [
   "wants to run away from home and become a traveling musician.",
   "hates the aristocracy and wants to see them taken down.",
   "has been infecting townspeople with Lycanthropy.",
-  "was framed and wrongly convicted of murder.",
+  "has been framed for murder.",
   "wears an amulet engraved with a strange symbol.",
   "has been hired to steal coin from the Player Characters.",
   `wants to invite you to dinner, and won't take "no" for an answer.`,
@@ -1057,7 +1045,6 @@ export {
   clothing,
   alignments,
   skins,
-  undertones,
   beliefsLG,
   beliefsLN,
   beliefsLE,

@@ -419,7 +419,6 @@ function getRandomTrait() {
 function setTraits() {
   document.getElementById("firstTrait").innerText = getRandomTrait();
   document.getElementById("secondTrait").innerText = getRandomTrait();
-  document.getElementById("thirdTrait").innerText = getRandomTrait();
 }
 
 //function for getting random plot hook

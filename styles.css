@@ -18,14 +18,14 @@ button,
   margin: 0;
   padding: 0;
   color: white;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 body,
 p,
 span {
   text-align: left;
-  line-height: 1.3rem;
+  line-height: 1.7;
 }
 
 h2 {
@@ -34,21 +34,28 @@ h2 {
 
 h1,
 h3 {
-  font-size: 1rem;
+  font-size: 1.3rem;
   text-align: center;
   letter-spacing: 0.1rem;
 }
 
 /*  section boxes  */
 
-.top,
 .container {
   display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+}
+
+.top,
+.container-cards {
+  display: flex;
   flex-direction: row;
+  gap: 1em;
+  margin: 0 auto;
+  padding: 0;
   justify-content: center;
   align-items: center;
-  gap: 1em;
-  padding: 0;
 }
 
 .top {
@@ -56,46 +63,41 @@ h3 {
   padding-right: 2em;
   margin-top: 1em;
   margin-bottom: 0em;
-  justify-content: bottom;
 }
-.container {
-  min-height: 50vh;
-  max-width: 70vw;
+
+.container-cards {
   padding: 1em;
   margin: 0 auto;
 }
 
 .section {
   background-color: rgb(255, 251, 240, 0.1);
-  height: 50em;
-  min-width: 20em;
   border-radius: 18px;
-  padding: 2em;
-  margin-top: 0;
+  padding: 4em;
+  max-width: 30em;
+  min-width: 25em;
+  height: 56em;
 }
 
 .about {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: left;
-  width: 25em;
 }
 
 .ability-personality {
   display: flex;
-  width: 25em;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding-top: 2em;
   gap: 1em;
 }
 
 .beliefs-alignment {
-  width: 25em;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .subsection {
@@ -108,7 +110,7 @@ button.btn {
   border: 0;
   border-radius: 8px;
   background: linear-gradient(to right, #eb5e28, #f0433d);
-  font-size: 0.8em;
+  font-size: 0.9rem;
   transition-duration: 0.5s;
   cursor: pointer;
   padding: 0.5em;
@@ -120,13 +122,13 @@ button.btn:hover {
 
 /* button generate */
 button.generate {
-  min-width: 12em;
+  min-width: 8em;
   height: 5em;
 }
 
 /* button randomize */
 button.randomize {
-  min-width: 12em;
+  min-width: 8em;
   height: 5em;
 }
 
@@ -202,7 +204,7 @@ span {
 }
 .ability-scores-column p {
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #ff986f;
   line-height: 0.2rem;
   letter-spacing: 0.1rem;
@@ -239,6 +241,8 @@ span {
   overflow-y: scroll;
   overflow-x: hidden;
   height: 95%;
+  padding: 2em;
+  padding-top: 0;
 }
 ::-webkit-scrollbar {
   width: 3px;
@@ -258,9 +262,11 @@ span {
 
 /* copyright */
 .copyright {
-  text-align: center;
+  display: flex;
+  align-items: center;
   font-size: 0.8rem;
-  margin: 0 auto;
+  justify-content: center;
+  gap: 0.4em;
 }
 
 a {
@@ -268,46 +274,35 @@ a {
   text-decoration: none;
 }
 
-@media (max-width: 800px) {
-  .container {
+@media (max-width: 1255px) {
+  .section {
+    width: 15em;
+    height: 65em;
+    padding: 3em;
+    gap: 1em;
+  }
+}
+
+@media (max-width: 1060px) {
+  .container-cards {
     display: flex;
     flex-direction: column;
   }
 
   .section {
-    width: 88vw;
-    height: 70vh;
-    padding: 3em;
+    width: 85vw;
+    height: 52em;
+    padding: 2em;
     gap: 1em;
   }
 
-  span,
-  p,
-  .beliefs,
-  .personality,
-  .plot-hook {
+  body {
+    font-size: 1.1rem;
     text-align: center;
   }
 
-  .beliefs-alignment {
-    padding: 2em;
-  }
-
-  button.align {
-    width: 25%;
-    height: 50%;
-    background: #eb5e28;
-  }
-
-  button.align:focus {
-    background: #b93500;
-    border: 1px solid white;
-  }
-
-  button.align:hover {
-    background: #b93500;
-    width: 27%;
-    height: 40%;
+  .ability-scores-column p {
+    font-size: 1.4rem;
   }
 
   #alignment {
@@ -317,40 +312,64 @@ a {
 
 @media (max-width: 600px) {
   .section {
-    width: 85vw;
-    height: 80vh;
-    padding: 3em;
+    min-width: 93vw;
+    height: 92vh;
   }
 
-  .subsection,
-  .appearance,
-  p,
-  span {
+  body {
     text-align: left;
+    font-size: 1rem;
   }
 
-  button.align {
-    width: 30%;
-    max-height: 5em;
-    background: #eb5e28;
+  .appearance {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 105%;
+    padding: 2em;
+    padding-top: 0;
+  }
+  ::-webkit-scrollbar {
+    width: 2px;
   }
 
-  button.align:focus {
-    background: #b93500;
-    border: 1px solid white;
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
   }
 
-  button.align:hover {
-    background: #b93500;
-    width: 32%;
-    height: 40%;
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
 }
 
 @media (max-width: 400px) {
+  h1 {
+    font-size: 0.9rem;
+  }
+
+  .top {
+    margin: 1em;
+    margin-bottom: 0;
+    padding: 0;
+  }
   .section {
-    width: 88vw;
-    max-height: 70em;
-    padding: 2em;
+    min-width: 93vw;
+    height: 95vh;
+  }
+
+  .about,
+  .ability-personality {
+    height: 100vh;
+  }
+
+  .ability-scores-column p {
+    font-size: 1.2rem;
+  }
+
+  .appearance {
+    padding: 1em;
   }
 }
