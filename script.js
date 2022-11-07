@@ -227,123 +227,126 @@ function setClothing() {
 
 //function for rolling dice w/ ability score modifiers
 function rollDice() {
-  let roll = Math.floor(Math.random() * 6) + 1;
-  return roll * 3;
+  return Math.floor(Math.random() * 6) + 1;
+}
+
+function rollThreeDice() {
+  return rollDice() + rollDice() + rollDice();
 }
 
 function setRolls() {
   if (confirmedRace == "Dragonborn") {
-    document.getElementById("str").innerText = `${rollDice() + 2} (+2)`;
-    document.getElementById("dex").innerText = rollDice();
-    document.getElementById("con").innerText = rollDice();
-    document.getElementById("int").innerText = rollDice();
-    document.getElementById("wis").innerText = rollDice();
-    document.getElementById("cha").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("str").innerText = `${rollThreeDice() + 2} (+2)`;
+    document.getElementById("dex").innerText = rollThreeDice();
+    document.getElementById("con").innerText = rollThreeDice();
+    document.getElementById("int").innerText = rollThreeDice();
+    document.getElementById("wis").innerText = rollThreeDice();
+    document.getElementById("cha").innerText = `${rollThreeDice() + 1} (+1)`;
   } else if (confirmedRace == "Dwarf") {
-    document.getElementById("str").innerText = rollDice();
-    document.getElementById("dex").innerText = rollDice();
-    document.getElementById("con").innerText = `${rollDice() + 2} (+2)`;
-    document.getElementById("int").innerText = rollDice();
-    document.getElementById("wis").innerText = rollDice();
-    document.getElementById("cha").innerText = rollDice();
+    document.getElementById("str").innerText = rollThreeDice();
+    document.getElementById("dex").innerText = rollThreeDice();
+    document.getElementById("con").innerText = `${rollThreeDice() + 2} (+2)`;
+    document.getElementById("int").innerText = rollThreeDice();
+    document.getElementById("wis").innerText = rollThreeDice();
+    document.getElementById("cha").innerText = rollThreeDice();
   } else if (confirmedRace == "Hill Dwarf") {
-    document.getElementById("str").innerText = rollDice();
-    document.getElementById("dex").innerText = rollDice();
-    document.getElementById("con").innerText = `${rollDice() + 2} (+2)`;
-    document.getElementById("int").innerText = rollDice();
-    document.getElementById("wis").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("cha").innerText = rollDice();
+    document.getElementById("str").innerText = rollThreeDice();
+    document.getElementById("dex").innerText = rollThreeDice();
+    document.getElementById("con").innerText = `${rollThreeDice() + 2} (+2)`;
+    document.getElementById("int").innerText = rollThreeDice();
+    document.getElementById("wis").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("cha").innerText = rollThreeDice();
   } else if (confirmedRace == "Mountain Dwarf") {
-    document.getElementById("str").innerText = `${rollDice() + 2} (+2)`;
-    document.getElementById("dex").innerText = rollDice();
-    document.getElementById("con").innerText = `${rollDice() + 2} (+2)`;
-    document.getElementById("int").innerText = rollDice();
-    document.getElementById("wis").innerText = rollDice();
-    document.getElementById("cha").innerText = rollDice();
+    document.getElementById("str").innerText = `${rollThreeDice() + 2} (+2)`;
+    document.getElementById("dex").innerText = rollThreeDice();
+    document.getElementById("con").innerText = `${rollThreeDice() + 2} (+2)`;
+    document.getElementById("int").innerText = rollThreeDice();
+    document.getElementById("wis").innerText = rollThreeDice();
+    document.getElementById("cha").innerText = rollThreeDice();
   } else if (confirmedRace == "Elf" || confirmedRace == "Halfling") {
-    document.getElementById("str").innerText = rollDice();
-    document.getElementById("dex").innerText = `${rollDice() + 2} (+2)`;
-    document.getElementById("con").innerText = rollDice();
-    document.getElementById("int").innerText = rollDice();
-    document.getElementById("wis").innerText = rollDice();
-    document.getElementById("cha").innerText = rollDice();
+    document.getElementById("str").innerText = rollThreeDice();
+    document.getElementById("dex").innerText = `${rollThreeDice() + 2} (+2)`;
+    document.getElementById("con").innerText = rollThreeDice();
+    document.getElementById("int").innerText = rollThreeDice();
+    document.getElementById("wis").innerText = rollThreeDice();
+    document.getElementById("cha").innerText = rollThreeDice();
   } else if (confirmedRace == "Eladrin Elf" || confirmedRace == "High Elf") {
-    document.getElementById("str").innerText = rollDice();
-    document.getElementById("dex").innerText = `${rollDice() + 2} (+2)`;
-    document.getElementById("con").innerText = rollDice();
-    document.getElementById("int").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("wis").innerText = rollDice();
-    document.getElementById("cha").innerText = rollDice();
+    document.getElementById("str").innerText = rollThreeDice();
+    document.getElementById("dex").innerText = `${rollThreeDice() + 2} (+2)`;
+    document.getElementById("con").innerText = rollThreeDice();
+    document.getElementById("int").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("wis").innerText = rollThreeDice();
+    document.getElementById("cha").innerText = rollThreeDice();
   } else if (confirmedRace == "Wood Elf") {
-    document.getElementById("str").innerText = rollDice();
-    document.getElementById("dex").innerText = `${rollDice() + 2} (+2)`;
-    document.getElementById("con").innerText = rollDice();
-    document.getElementById("int").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("wis").innerText = rollDice();
-    document.getElementById("cha").innerText = rollDice();
+    document.getElementById("str").innerText = rollThreeDice();
+    document.getElementById("dex").innerText = `${rollThreeDice() + 2} (+2)`;
+    document.getElementById("con").innerText = rollThreeDice();
+    document.getElementById("int").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("wis").innerText = rollThreeDice();
+    document.getElementById("cha").innerText = rollThreeDice();
   } else if (confirmedRace == "Half-Elf") {
-    document.getElementById("str").innerText = rollDice();
-    document.getElementById("dex").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("con").innerText = rollDice();
-    document.getElementById("int").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("wis").innerText = rollDice();
-    document.getElementById("cha").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("str").innerText = rollThreeDice();
+    document.getElementById("dex").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("con").innerText = rollThreeDice();
+    document.getElementById("int").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("wis").innerText = rollThreeDice();
+    document.getElementById("cha").innerText = `${rollThreeDice() + 2} (+2)`;
   } else if (confirmedRace == "Gnome") {
-    document.getElementById("str").innerText = rollDice();
-    document.getElementById("dex").innerText = rollDice();
-    document.getElementById("con").innerText = rollDice();
-    document.getElementById("int").innerText = `${rollDice() + 2} (+2)`;
-    document.getElementById("wis").innerText = rollDice();
-    document.getElementById("cha").innerText = rollDice();
+    document.getElementById("str").innerText = rollThreeDice();
+    document.getElementById("dex").innerText = rollThreeDice();
+    document.getElementById("con").innerText = rollThreeDice();
+    document.getElementById("int").innerText = `${rollThreeDice() + 2} (+2)`;
+    document.getElementById("wis").innerText = rollThreeDice();
+    document.getElementById("cha").innerText = rollThreeDice();
   } else if (confirmedRace == "Deep Gnome") {
-    document.getElementById("str").innerText = rollDice();
-    document.getElementById("dex").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("con").innerText = rollDice();
-    document.getElementById("int").innerText = `${rollDice() + 2} (+2)`;
-    document.getElementById("wis").innerText = rollDice();
-    document.getElementById("cha").innerText = rollDice();
+    document.getElementById("str").innerText = rollThreeDice();
+    document.getElementById("dex").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("con").innerText = rollThreeDice();
+    document.getElementById("int").innerText = `${rollThreeDice() + 2} (+2)`;
+    document.getElementById("wis").innerText = rollThreeDice();
+    document.getElementById("cha").innerText = rollThreeDice();
   } else if (confirmedRace == "Rock Gnome") {
-    document.getElementById("str").innerText = rollDice();
-    document.getElementById("dex").innerText = rollDice();
-    document.getElementById("con").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("int").innerText = `${rollDice() + 2} (+2)`;
-    document.getElementById("wis").innerText = rollDice();
-    document.getElementById("cha").innerText = rollDice();
+    document.getElementById("str").innerText = rollThreeDice();
+    document.getElementById("dex").innerText = rollThreeDice();
+    document.getElementById("con").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("int").innerText = `${rollThreeDice() + 2} (+2)`;
+    document.getElementById("wis").innerText = rollThreeDice();
+    document.getElementById("cha").innerText = rollThreeDice();
   } else if (confirmedRace == "Lightfoot Halfling") {
-    document.getElementById("str").innerText = rollDice();
-    document.getElementById("dex").innerText = `${rollDice() + 2} (+2)`;
-    document.getElementById("con").innerText = rollDice();
-    document.getElementById("int").innerText = rollDice();
-    document.getElementById("wis").innerText = rollDice();
-    document.getElementById("cha").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("str").innerText = rollThreeDice();
+    document.getElementById("dex").innerText = `${rollThreeDice() + 2} (+2)`;
+    document.getElementById("con").innerText = rollThreeDice();
+    document.getElementById("int").innerText = rollThreeDice();
+    document.getElementById("wis").innerText = rollThreeDice();
+    document.getElementById("cha").innerText = `${rollThreeDice() + 1} (+1)`;
   } else if (confirmedRace == "Stout Halfling") {
-    document.getElementById("str").innerText = rollDice();
-    document.getElementById("dex").innerText = `${rollDice() + 2} (+2)`;
-    document.getElementById("con").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("int").innerText = rollDice();
-    document.getElementById("wis").innerText = rollDice();
-    document.getElementById("cha").innerText = rollDice();
+    document.getElementById("str").innerText = rollThreeDice();
+    document.getElementById("dex").innerText = `${rollThreeDice() + 2} (+2)`;
+    document.getElementById("con").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("int").innerText = rollThreeDice();
+    document.getElementById("wis").innerText = rollThreeDice();
+    document.getElementById("cha").innerText = rollThreeDice();
   } else if (confirmedRace == "Orc" || confirmedRace == "Half-Orc") {
-    document.getElementById("str").innerText = `${rollDice() + 2} (+2)`;
-    document.getElementById("dex").innerText = rollDice();
-    document.getElementById("con").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("int").innerText = rollDice();
-    document.getElementById("wis").innerText = rollDice();
-    document.getElementById("cha").innerText = rollDice();
+    document.getElementById("str").innerText = `${rollThreeDice() + 2} (+2)`;
+    document.getElementById("dex").innerText = rollThreeDice();
+    document.getElementById("con").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("int").innerText = rollThreeDice();
+    document.getElementById("wis").innerText = rollThreeDice();
+    document.getElementById("cha").innerText = rollThreeDice();
   } else if (confirmedRace == "Human") {
-    document.getElementById("str").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("dex").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("con").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("int").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("wis").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("cha").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("str").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("dex").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("con").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("int").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("wis").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("cha").innerText = `${rollThreeDice() + 1} (+1)`;
   } else if (confirmedRace == "Tiefling") {
-    document.getElementById("str").innerText = rollDice();
-    document.getElementById("dex").innerText = rollDice();
-    document.getElementById("con").innerText = rollDice();
-    document.getElementById("int").innerText = `${rollDice() + 1} (+1)`;
-    document.getElementById("wis").innerText = rollDice();
-    document.getElementById("cha").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("str").innerText = rollThreeDice();
+    document.getElementById("dex").innerText = rollThreeDice();
+    document.getElementById("con").innerText = rollThreeDice();
+    document.getElementById("int").innerText = `${rollThreeDice() + 1} (+1)`;
+    document.getElementById("wis").innerText = rollThreeDice();
+    document.getElementById("cha").innerText = `${rollThreeDice() + 2} (+2)`;
   }
 }
 
