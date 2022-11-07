@@ -10,6 +10,7 @@ add color themes? */
 
 html {
   background-color: #252422;
+  scroll-behavior: smooth;
 }
 
 body,
@@ -30,6 +31,7 @@ span {
 
 h2 {
   font-size: 1.8rem;
+  animation: moveInFromTop 3s;
 }
 
 h1,
@@ -37,6 +39,7 @@ h3 {
   font-size: 1.3rem;
   text-align: center;
   letter-spacing: 0.1rem;
+  animation: moveInFromTop 3s;
 }
 
 /*  section boxes  */
@@ -274,6 +277,26 @@ a {
   text-decoration: none;
 }
 
+#returnToTop {
+  display: none;
+  margin: 0 auto;
+}
+
+/* animation */
+@keyframes moveInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* media queries */
+
 @media (max-width: 1255px) {
   .section {
     width: 15em;
@@ -290,7 +313,7 @@ a {
   }
 
   .section {
-    width: 85vw;
+    width: 93vw;
     height: 52em;
     padding: 2em;
     gap: 1em;
@@ -308,12 +331,33 @@ a {
   #alignment {
     padding-top: 3.5em;
   }
+
+  #returnToTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    height: 3em;
+    border: 2px solid #a1a1a1;
+    background: none;
+    margin-bottom: 1em;
+    margin-top: 0.2em;
+  }
+
+  #returnToTop:hover {
+    border: 2px solid #fa5b33;
+  }
 }
 
 @media (max-width: 600px) {
+  .container {
+    width: 100vw;
+    margin: 0 auto;
+  }
   .section {
     min-width: 93vw;
-    height: 92vh;
+    min-height: 55em;
+    margin: 0 auto;
   }
 
   body {
@@ -328,6 +372,7 @@ a {
     padding: 2em;
     padding-top: 0;
   }
+
   ::-webkit-scrollbar {
     width: 2px;
   }
@@ -345,24 +390,20 @@ a {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
   h1 {
     font-size: 0.9rem;
+  }
+
+  .section {
+    margin: 0 auto;
+    height: 53em;
   }
 
   .top {
     margin: 1em;
     margin-bottom: 0;
     padding: 0;
-  }
-  .section {
-    min-width: 93vw;
-    height: 95vh;
-  }
-
-  .about,
-  .ability-personality {
-    height: 100vh;
   }
 
   .ability-scores-column p {

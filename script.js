@@ -12,6 +12,10 @@ let confirmedSex = "";
 
 let confirmedAlignment = "";
 
+let confirmedRace = "";
+
+let roll = "";
+
 import {
   femaleNames,
   maleNames,
@@ -90,7 +94,8 @@ function setRandomAge() {
 
 //function for getting randomized race
 function getRandomRace() {
-  return races[Math.floor(Math.random() * races.length)];
+  confirmedRace = races[Math.floor(Math.random() * races.length)];
+  return confirmedRace;
 }
 
 function setRandomRace() {
@@ -144,9 +149,9 @@ function setPronoun() {
   let pronoun = document.getElementsByClassName("pronoun");
   for (let i = 0; i < pronoun.length; i++) {
     if (confirmedSex == "female") {
-      pronoun[i].innerHTML = "She";
+      pronoun[i].innerText = "She";
     } else {
-      pronoun[i].innerHTML = "He";
+      pronoun[i].innerText = "He";
     }
   }
 }
@@ -220,19 +225,126 @@ function setClothing() {
   return (document.getElementById("clothing").innerText = getClothing());
 }
 
-//function for rolling dice
+//function for rolling dice w/ ability score modifiers
 function rollDice() {
   let roll = Math.floor(Math.random() * 6) + 1;
   return roll * 3;
 }
 
 function setRolls() {
-  document.getElementById("str").innerText = rollDice();
-  document.getElementById("dex").innerText = rollDice();
-  document.getElementById("con").innerText = rollDice();
-  document.getElementById("int").innerText = rollDice();
-  document.getElementById("wis").innerText = rollDice();
-  document.getElementById("cha").innerText = rollDice();
+  if (confirmedRace == "Dragonborn") {
+    document.getElementById("str").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("dex").innerText = rollDice();
+    document.getElementById("con").innerText = rollDice();
+    document.getElementById("int").innerText = rollDice();
+    document.getElementById("wis").innerText = rollDice();
+    document.getElementById("cha").innerText = `${rollDice() + 1} (+1)`;
+  } else if (confirmedRace == "Dwarf") {
+    document.getElementById("str").innerText = rollDice();
+    document.getElementById("dex").innerText = rollDice();
+    document.getElementById("con").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("int").innerText = rollDice();
+    document.getElementById("wis").innerText = rollDice();
+    document.getElementById("cha").innerText = rollDice();
+  } else if (confirmedRace == "Hill Dwarf") {
+    document.getElementById("str").innerText = rollDice();
+    document.getElementById("dex").innerText = rollDice();
+    document.getElementById("con").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("int").innerText = rollDice();
+    document.getElementById("wis").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("cha").innerText = rollDice();
+  } else if (confirmedRace == "Mountain Dwarf") {
+    document.getElementById("str").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("dex").innerText = rollDice();
+    document.getElementById("con").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("int").innerText = rollDice();
+    document.getElementById("wis").innerText = rollDice();
+    document.getElementById("cha").innerText = rollDice();
+  } else if (confirmedRace == "Elf" || confirmedRace == "Halfling") {
+    document.getElementById("str").innerText = rollDice();
+    document.getElementById("dex").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("con").innerText = rollDice();
+    document.getElementById("int").innerText = rollDice();
+    document.getElementById("wis").innerText = rollDice();
+    document.getElementById("cha").innerText = rollDice();
+  } else if (confirmedRace == "Eladrin Elf" || confirmedRace == "High Elf") {
+    document.getElementById("str").innerText = rollDice();
+    document.getElementById("dex").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("con").innerText = rollDice();
+    document.getElementById("int").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("wis").innerText = rollDice();
+    document.getElementById("cha").innerText = rollDice();
+  } else if (confirmedRace == "Wood Elf") {
+    document.getElementById("str").innerText = rollDice();
+    document.getElementById("dex").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("con").innerText = rollDice();
+    document.getElementById("int").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("wis").innerText = rollDice();
+    document.getElementById("cha").innerText = rollDice();
+  } else if (confirmedRace == "Half-Elf") {
+    document.getElementById("str").innerText = rollDice();
+    document.getElementById("dex").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("con").innerText = rollDice();
+    document.getElementById("int").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("wis").innerText = rollDice();
+    document.getElementById("cha").innerText = `${rollDice() + 2} (+2)`;
+  } else if (confirmedRace == "Gnome") {
+    document.getElementById("str").innerText = rollDice();
+    document.getElementById("dex").innerText = rollDice();
+    document.getElementById("con").innerText = rollDice();
+    document.getElementById("int").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("wis").innerText = rollDice();
+    document.getElementById("cha").innerText = rollDice();
+  } else if (confirmedRace == "Deep Gnome") {
+    document.getElementById("str").innerText = rollDice();
+    document.getElementById("dex").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("con").innerText = rollDice();
+    document.getElementById("int").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("wis").innerText = rollDice();
+    document.getElementById("cha").innerText = rollDice();
+  } else if (confirmedRace == "Rock Gnome") {
+    document.getElementById("str").innerText = rollDice();
+    document.getElementById("dex").innerText = rollDice();
+    document.getElementById("con").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("int").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("wis").innerText = rollDice();
+    document.getElementById("cha").innerText = rollDice();
+  } else if (confirmedRace == "Lightfoot Halfling") {
+    document.getElementById("str").innerText = rollDice();
+    document.getElementById("dex").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("con").innerText = rollDice();
+    document.getElementById("int").innerText = rollDice();
+    document.getElementById("wis").innerText = rollDice();
+    document.getElementById("cha").innerText = `${rollDice() + 1} (+1)`;
+  } else if (confirmedRace == "Stout Halfling") {
+    document.getElementById("str").innerText = rollDice();
+    document.getElementById("dex").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("con").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("int").innerText = rollDice();
+    document.getElementById("wis").innerText = rollDice();
+    document.getElementById("cha").innerText = rollDice();
+  } else if (confirmedRace == "Orc" || confirmedRace == "Half-Orc") {
+    document.getElementById("str").innerText = `${rollDice() + 2} (+2)`;
+    document.getElementById("dex").innerText = rollDice();
+    document.getElementById("con").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("int").innerText = rollDice();
+    document.getElementById("wis").innerText = rollDice();
+    document.getElementById("cha").innerText = rollDice();
+  } else if (confirmedRace == "Human") {
+    document.getElementById("str").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("dex").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("con").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("int").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("wis").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("cha").innerText = `${rollDice() + 1} (+1)`;
+  } else if (confirmedRace == "Tiefling") {
+    document.getElementById("str").innerText = rollDice();
+    document.getElementById("dex").innerText = rollDice();
+    document.getElementById("con").innerText = rollDice();
+    document.getElementById("int").innerText = `${rollDice() + 1} (+1)`;
+    document.getElementById("wis").innerText = rollDice();
+    document.getElementById("cha").innerText = `${rollDice() + 2} (+2)`;
+  }
 }
 
 //function for randomizing alignment and setting label
