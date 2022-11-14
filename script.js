@@ -6,7 +6,9 @@
 //arrays
 const sex = ["female", "male"];
 
-let fullName = "";
+let firstName = "";
+
+let lastName = "";
 
 let confirmedSex = "";
 
@@ -14,12 +16,21 @@ let confirmedAlignment = "";
 
 let confirmedRace = "";
 
-let roll = "";
-
 import {
   femaleNames,
   maleNames,
-  lastNames,
+  humanNames,
+  elfNames,
+  dwarfNames,
+  gnomeNames,
+  halflingNames,
+  orcNames,
+  tieflingNames,
+  dragonbornNames,
+  dragonbornClans,
+} from "./names.js";
+
+import {
   ages,
   races,
   jobs,
@@ -53,20 +64,18 @@ function getRandomSex() {
   return confirmedSex;
 }
 
-//function for getting randomized name based on sex
-function getRandomName() {
+//function for getting randomized first name based on sex
+function getRandomFirstName() {
   getRandomSex();
   setRandomSex();
   if (confirmedSex == "female") {
-    fullName = `${
+    firstName = `${
       femaleNames[Math.floor(Math.random() * femaleNames.length)]
-    } ${lastNames[Math.floor(Math.random() * lastNames.length)]}`;
-  } else if (confirmedSex == "male") {
-    fullName = `${maleNames[Math.floor(Math.random() * maleNames.length)]} ${
-      lastNames[Math.floor(Math.random() * lastNames.length)]
     }`;
+  } else if (confirmedSex == "male") {
+    firstName = `${maleNames[Math.floor(Math.random() * maleNames.length)]}`;
   }
-  return fullName;
+  return firstName;
 }
 
 function setRandomSex() {
@@ -77,10 +86,9 @@ function setRandomSex() {
   }
 }
 
-function setRandomName() {
-  getRandomName();
-  document.getElementById("name").innerText = fullName;
-  document.getElementById("fullName").innerText = fullName;
+function setRandomFirstName() {
+  getRandomFirstName();
+  document.getElementById("firstName").innerText = firstName;
 }
 
 //function for getting randomized age
@@ -92,14 +100,71 @@ function setRandomAge() {
   return (document.getElementById("age").innerText = getRandomAge());
 }
 
-//function for getting randomized race
+//function for getting randomized race and
+//last name based on race
+
 function getRandomRace() {
   confirmedRace = races[Math.floor(Math.random() * races.length)];
   return confirmedRace;
 }
 
 function setRandomRace() {
-  return (document.getElementById("race").innerText = getRandomRace());
+  document.getElementById("race").innerText = confirmedRace;
+}
+
+function getRandomLastName() {
+  getRandomRace();
+  setRandomRace();
+  if (
+    confirmedRace == "Elf" ||
+    confirmedRace == "Half-Elf" ||
+    confirmedRace == "High Elf" ||
+    confirmedRace == "Wood Elf" ||
+    confirmedRace == "Eladrin Elf"
+  ) {
+    lastName = `${elfNames[Math.floor(Math.random() * elfNames.length)]}`;
+  } else if (confirmedRace == "Human") {
+    lastName = `${humanNames[Math.floor(Math.random() * humanNames.length)]}`;
+  } else if (
+    confirmedRace == "Dwarf" ||
+    confirmedRace == "Hill Dwarf" ||
+    confirmedRace == "Mountain Dwarf"
+  ) {
+    lastName = `${dwarfNames[Math.floor(Math.random() * dwarfNames.length)]}`;
+  } else if (
+    confirmedRace == "Gnome" ||
+    confirmedRace == "Deep Gnome" ||
+    confirmedRace == "Rock Gnome"
+  ) {
+    lastName = `${gnomeNames[Math.floor(Math.random() * gnomeNames.length)]}`;
+  } else if (
+    confirmedRace == "Halfling" ||
+    confirmedRace == "Lightfoot Halfling" ||
+    confirmedRace == "StoutHalfling"
+  ) {
+    lastName = `${
+      halflingNames[Math.floor(Math.random() * halflingNames.length)]
+    }`;
+  } else if (confirmedRace == "Orc" || confirmedRace == "Half-Orc") {
+    lastName = `${orcNames[Math.floor(Math.random() * orcNames.length)]}`;
+  } else if (confirmedRace == "Tiefling") {
+    lastName = `${
+      tieflingNames[Math.floor(Math.random() * tieflingNames.length)]
+    }`;
+  } else if (confirmedRace == "Dragonborn") {
+    lastName = `${
+      dragonbornNames[Math.floor(Math.random() * dragonbornNames.length)]
+    }
+     of the Clan ${
+       dragonbornClans[Math.floor(Math.random() * dragonbornClans.length)]
+     }`;
+  }
+  return lastName;
+}
+
+function setRandomLastName() {
+  getRandomLastName();
+  document.getElementById("surname").innerText = lastName;
 }
 
 //function for getting randomized job
@@ -546,8 +611,14 @@ function setPlotHook() {
 }
 
 //changes left side information on click of 'generate' button
+
 document.querySelector(".generate").addEventListener("click", setRandomSex);
-document.querySelector(".generate").addEventListener("click", setRandomName);
+document
+  .querySelector(".generate")
+  .addEventListener("click", setRandomFirstName);
+document
+  .querySelector(".generate")
+  .addEventListener("click", setRandomLastName);
 document.querySelector(".generate").addEventListener("click", setRandomAge);
 document.querySelector(".generate").addEventListener("click", setRandomRace);
 document.querySelector(".generate").addEventListener("click", setRandomJob);
