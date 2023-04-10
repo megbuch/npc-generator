@@ -1,8 +1,3 @@
-const sexes = ["female", "male"];
-let confirmedRace = "";
-let lastName = "";
-let confirmedAlignment = "";
-
 import {
   femaleNames,
   maleNames,
@@ -45,6 +40,7 @@ import {
   plotHooks,
 } from "./arrays.js";
 
+const sexes = ["female", "male"];
 const racialAbilityModifiers = {
   Dragonborn: { str: 2, dex: 0, con: 0, int: 0, wis: 0, cha: 1 },
   "Draconic Ancestry Dragonborn": {
@@ -90,6 +86,9 @@ const racialAbilityModifiers = {
   "Mephistopheles Tiefling": { str: 0, dex: 0, con: 0, int: 1, wis: 0, cha: 2 },
   "Zariel Tiefling": { str: 1, dex: 0, con: 0, int: 0, wis: 0, cha: 2 },
 };
+let confirmedRace = "";
+let lastName = "";
+let confirmedAlignment = "";
 
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
@@ -271,167 +270,40 @@ function setRolls() {
   }
 }
 
-function getRandomAlignment() {
-  let confirmedAlignment =
-    alignments[Math.floor(Math.random() * alignments.length)];
+function setRandomAlignment() {
+  confirmedAlignment = getRandomElement(alignments);
+  document.getElementById("alignment").innerText = confirmedAlignment;
   return confirmedAlignment;
 }
 
-function setRandomAlignment() {
-  return (document.getElementById("alignment").innerText =
-    getRandomAlignment());
-}
+function setBeliefs(alignment) {
+  const beliefs = {
+    "Lawful Good": beliefsLG,
+    "Lawful Neutral": beliefsLN,
+    "Lawful Evil": beliefsLE,
+    "Neutral Good": beliefsNG,
+    "True Neutral": beliefsNN,
+    "Neutral Evil": beliefsNE,
+    "Chaotic Good": beliefsCG,
+    "Chaotic Neutral": beliefsCN,
+    "Chaotic Evil": beliefsCE,
+  };
 
-function getRandomBeliefLG() {
-  return beliefsLG[Math.floor(Math.random() * beliefsLG.length)];
-}
-
-function setBeliefsLG() {
-  document.getElementById("firstBelief").innerText = getRandomBeliefLG();
-  document.getElementById("secondBelief").innerText = getRandomBeliefLG();
-  document.getElementById("thirdBelief").innerText = getRandomBeliefLG();
-  document.getElementById("alignment").innerText = "Lawful Good";
-}
-
-function getRandomBeliefLN() {
-  return beliefsLN[Math.floor(Math.random() * beliefsLN.length)];
-}
-
-function setBeliefsLN() {
-  document.getElementById("firstBelief").innerText = getRandomBeliefLN();
-  document.getElementById("secondBelief").innerText = getRandomBeliefLN();
-  document.getElementById("thirdBelief").innerText = getRandomBeliefLN();
-  document.getElementById("alignment").innerText = "Lawful Neutral";
-}
-
-function getRandomBeliefLE() {
-  let confirmedBeliefLE =
-    beliefsLE[Math.floor(Math.random() * beliefsLE.length)];
-  return confirmedBeliefLE;
-}
-
-function setBeliefsLE() {
-  document.getElementById("firstBelief").innerText = getRandomBeliefLE();
-  document.getElementById("secondBelief").innerText = getRandomBeliefLE();
-  document.getElementById("thirdBelief").innerText = getRandomBeliefLE();
-  document.getElementById("alignment").innerText = "Lawful Evil";
-}
-
-function getRandomBeliefNG() {
-  return beliefsNG[Math.floor(Math.random() * beliefsNG.length)];
-}
-
-function setBeliefsNG() {
-  document.getElementById("firstBelief").innerText = getRandomBeliefNG();
-  document.getElementById("secondBelief").innerText = getRandomBeliefNG();
-  document.getElementById("thirdBelief").innerText = getRandomBeliefNG();
-  document.getElementById("alignment").innerText = "Neutral Good";
-}
-
-function getRandomBeliefNN() {
-  return beliefsNN[Math.floor(Math.random() * beliefsNN.length)];
-}
-
-function setBeliefsNN() {
-  document.getElementById("firstBelief").innerText = getRandomBeliefNN();
-  document.getElementById("secondBelief").innerText = getRandomBeliefNN();
-  document.getElementById("thirdBelief").innerText = getRandomBeliefNN();
-  document.getElementById("alignment").innerText = "True Neutral";
-}
-
-function getRandomBeliefNE() {
-  return beliefsNE[Math.floor(Math.random() * beliefsNE.length)];
-}
-
-function setBeliefsNE() {
-  document.getElementById("firstBelief").innerText = getRandomBeliefNE();
-  document.getElementById("secondBelief").innerText = getRandomBeliefNE();
-  document.getElementById("thirdBelief").innerText = getRandomBeliefNE();
-  document.getElementById("alignment").innerText = "Neutral Evil";
-}
-
-function getRandomBeliefCG() {
-  return beliefsCG[Math.floor(Math.random() * beliefsCG.length)];
-}
-
-function setBeliefsCG() {
-  document.getElementById("firstBelief").innerText = getRandomBeliefCG();
-  document.getElementById("secondBelief").innerText = getRandomBeliefCG();
-  document.getElementById("thirdBelief").innerText = getRandomBeliefCG();
-  document.getElementById("alignment").innerText = "Chaotic Good";
-}
-
-function getRandomBeliefCN() {
-  return beliefsCN[Math.floor(Math.random() * beliefsCN.length)];
-}
-
-function setBeliefsCN() {
-  document.getElementById("firstBelief").innerText = getRandomBeliefCN();
-  document.getElementById("secondBelief").innerText = getRandomBeliefCN();
-  document.getElementById("thirdBelief").innerText = getRandomBeliefCN();
-  document.getElementById("alignment").innerText = "Chaotic Neutral";
-}
-
-function getRandomBeliefCE() {
-  return beliefsCE[Math.floor(Math.random() * beliefsCE.length)];
-}
-
-function setBeliefsCE() {
-  document.getElementById("firstBelief").innerText = getRandomBeliefCE();
-  document.getElementById("secondBelief").innerText = getRandomBeliefCE();
-  document.getElementById("thirdBelief").innerText = getRandomBeliefCE();
-  document.getElementById("alignment").innerText = "Chaotic Evil";
+  document.getElementById("firstBelief").innerText = getRandomElement(
+    beliefs[alignment]
+  );
+  document.getElementById("secondBelief").innerText = getRandomElement(
+    beliefs[alignment]
+  );
+  document.getElementById("thirdBelief").innerText = getRandomElement(
+    beliefs[alignment]
+  );
+  document.getElementById("alignment").innerText = alignment;
 }
 
 function randomizeBeliefs() {
-  getRandomAlignment();
   setRandomAlignment();
-  if (confirmedAlignment == "Lawful Good") {
-    document.getElementById("firstBelief").innerText = getRandomBeliefLG();
-    document.getElementById("secondBelief").innerText = getRandomBeliefLG();
-    document.getElementById("thirdBelief").innerText = getRandomBeliefLG();
-    document.getElementById("alignment").innerText = "Lawful Good";
-  } else if (confirmedAlignment == "Lawful Neutral") {
-    document.getElementById("firstBelief").innerText = getRandomBeliefLN();
-    document.getElementById("secondBelief").innerText = getRandomBeliefLN();
-    document.getElementById("thirdBelief").innerText = getRandomBeliefLN();
-    document.getElementById("alignment").innerText = "Lawful Neutral";
-  } else if (confirmedAlignment == "Lawful Evil") {
-    document.getElementById("firstBelief").innerText = getRandomBeliefLE();
-    document.getElementById("secondBelief").innerText = getRandomBeliefLE();
-    document.getElementById("thirdBelief").innerText = getRandomBeliefLE();
-    document.getElementById("alignment").innerText = "Lawful Evil";
-  } else if (confirmedAlignment == "Neutral Good") {
-    document.getElementById("firstBelief").innerText = getRandomBeliefNG();
-    document.getElementById("secondBelief").innerText = getRandomBeliefNG();
-    document.getElementById("thirdBelief").innerText = getRandomBeliefNG();
-    document.getElementById("alignment").innerText = "Neutral Good";
-  } else if (confirmedAlignment == "True Neutral") {
-    document.getElementById("firstBelief").innerText = getRandomBeliefNN();
-    document.getElementById("secondBelief").innerText = getRandomBeliefNN();
-    document.getElementById("thirdBelief").innerText = getRandomBeliefNN();
-    document.getElementById("alignment").innerText = "True Neutral";
-  } else if (confirmedAlignment == "Neutral Evil") {
-    document.getElementById("firstBelief").innerText = getRandomBeliefNE();
-    document.getElementById("secondBelief").innerText = getRandomBeliefNE();
-    document.getElementById("thirdBelief").innerText = getRandomBeliefNE();
-    document.getElementById("alignment").innerText = "Neutral Evil";
-  } else if (confirmedAlignment == "Chaotic Good") {
-    document.getElementById("firstBelief").innerText = getRandomBeliefCG();
-    document.getElementById("secondBelief").innerText = getRandomBeliefCG();
-    document.getElementById("thirdBelief").innerText = getRandomBeliefCG();
-    document.getElementById("alignment").innerText = "Chaotic Good";
-  } else if (confirmedAlignment == "Chaotic Neutral") {
-    document.getElementById("firstBelief").innerText = getRandomBeliefCN();
-    document.getElementById("secondBelief").innerText = getRandomBeliefCN();
-    document.getElementById("thirdBelief").innerText = getRandomBeliefCN();
-    document.getElementById("alignment").innerText = "Chaotic Neutral";
-  } else if (confirmedAlignment == "Chaotic Evil") {
-    document.getElementById("firstBelief").innerText = getRandomBeliefCE();
-    document.getElementById("secondBelief").innerText = getRandomBeliefCE();
-    document.getElementById("thirdBelief").innerText = getRandomBeliefCE();
-    document.getElementById("alignment").innerText = "Chaotic Evil";
-  }
+  setBeliefs(confirmedAlignment);
 }
 
 function getRandomTrait() {
@@ -484,15 +356,33 @@ document
 document.querySelector(".generate").addEventListener("click", setRolls);
 document.querySelector(".generate").addEventListener("click", setTraits);
 document.querySelector(".generate").addEventListener("click", setPlotHook);
-document.getElementById("lawGood").addEventListener("click", setBeliefsLG);
-document.getElementById("lawNeu").addEventListener("click", setBeliefsLN);
-document.getElementById("lawEvil").addEventListener("click", setBeliefsLE);
-document.getElementById("neuGood").addEventListener("click", setBeliefsNG);
-document.getElementById("neu").addEventListener("click", setBeliefsNN);
-document.getElementById("neuEvil").addEventListener("click", setBeliefsNE);
-document.getElementById("chaGood").addEventListener("click", setBeliefsCG);
-document.getElementById("chaNeu").addEventListener("click", setBeliefsCN);
-document.getElementById("chaEvil").addEventListener("click", setBeliefsCE);
+document.getElementById("lawGood").addEventListener("click", function () {
+  setBeliefs("Lawful Good");
+});
+document.getElementById("lawNeu").addEventListener("click", function () {
+  setBeliefs("Lawful Neutral");
+});
+document.getElementById("lawEvil").addEventListener("click", function () {
+  setBeliefs("Lawful Evil");
+});
+document.getElementById("neuGood").addEventListener("click", function () {
+  setBeliefs("Neutral Good");
+});
+document.getElementById("neu").addEventListener("click", function () {
+  setBeliefs("True Neutral");
+});
+document.getElementById("neuEvil").addEventListener("click", function () {
+  setBeliefs("Neutral Evil");
+});
+document.getElementById("chaGood").addEventListener("click", function () {
+  setBeliefs("Chaotic Good");
+});
+document.getElementById("chaNeu").addEventListener("click", function () {
+  setBeliefs("Chaotic Neutral");
+});
+document.getElementById("chaEvil").addEventListener("click", function () {
+  setBeliefs("Chaotic Evil");
+});
 document.querySelector(".generate").addEventListener("click", randomizeBeliefs);
 document
   .querySelector(".randomize")
