@@ -1,19 +1,9 @@
-"use strict";
-
-//make surnames based on race
-//create religion/deity section based on alignment
-
-//arrays
 const sex = ["female", "male"];
 
 let firstName = "";
-
 let lastName = "";
-
 let confirmedSex = "";
-
 let confirmedAlignment = "";
-
 let confirmedRace = "";
 
 import {
@@ -58,13 +48,11 @@ import {
   plotHooks,
 } from "./arrays.js";
 
-//function for getting randomized sex
 function getRandomSex() {
   confirmedSex = sex[Math.floor(Math.random() * sex.length)];
   return confirmedSex;
 }
 
-//function for getting randomized first name based on sex
 function getRandomFirstName() {
   getRandomSex();
   setRandomSex();
@@ -91,7 +79,6 @@ function setRandomFirstName() {
   document.getElementById("firstName").innerText = firstName;
 }
 
-//function for getting randomized age
 function getRandomAge() {
   return ages[Math.floor(Math.random() * ages.length)];
 }
@@ -99,9 +86,6 @@ function getRandomAge() {
 function setRandomAge() {
   return (document.getElementById("age").innerText = getRandomAge());
 }
-
-//function for getting randomized race and
-//last name based on race
 
 function getRandomRace() {
   confirmedRace = races[Math.floor(Math.random() * races.length)];
@@ -167,7 +151,6 @@ function setRandomLastName() {
   document.getElementById("surname").innerText = lastName;
 }
 
-//function for getting randomized job
 function getRandomJob() {
   return jobs[Math.floor(Math.random() * jobs.length)];
 }
@@ -176,7 +159,6 @@ function setRandomJob() {
   return (document.getElementById("job").innerText = getRandomJob());
 }
 
-//function for getting randomized orientation
 function getRandomOrientation() {
   return sexualOrientation[
     Math.floor(Math.random() * sexualOrientation.length)
@@ -188,7 +170,6 @@ function setRandomOrientation() {
     getRandomOrientation());
 }
 
-//function for getting randomized relationship status
 function getRandomRelationship() {
   return relationshipStatus[
     Math.floor(Math.random() * relationshipStatus.length)
@@ -200,7 +181,6 @@ function setRandomRelationship() {
     getRandomRelationship());
 }
 
-//function for getting randomized # of children
 function getRandomChildren() {
   return children[Math.floor(Math.random() * children.length)];
 }
@@ -209,7 +189,6 @@ function setRandomChildren() {
   return (document.getElementById("children").innerText = getRandomChildren());
 }
 
-//function for changing pronouns from she/he
 function setPronoun() {
   let pronoun = document.getElementsByClassName("pronoun");
   for (let i = 0; i < pronoun.length; i++) {
@@ -221,8 +200,6 @@ function setPronoun() {
   }
 }
 
-//functions for updating appearance descriptions
-//overall description
 function getOverallDescription() {
   return appearanceOverall[
     Math.floor(Math.random() * appearanceOverall.length)
@@ -234,7 +211,6 @@ function setOverallDescription() {
     getOverallDescription());
 }
 
-//eyes description
 function getEyes() {
   return eyeColor[Math.floor(Math.random() * eyeColor.length)];
 }
@@ -243,7 +219,6 @@ function setEyes() {
   return (document.getElementById("eyeColor").innerText = getEyes());
 }
 
-//hair description
 function getHair() {
   return hairColor[Math.floor(Math.random() * hairColor.length)];
 }
@@ -252,7 +227,6 @@ function setHair() {
   return (document.getElementById("hairColor").innerText = getHair());
 }
 
-//hair style description
 function getStyle() {
   return hairStyle[Math.floor(Math.random() * hairStyle.length)];
 }
@@ -261,7 +235,6 @@ function setStyle() {
   return (document.getElementById("hairStyle").innerText = getStyle());
 }
 
-//body description
 function getBodyDescription() {
   return body[Math.floor(Math.random() * body.length)];
 }
@@ -271,7 +244,6 @@ function setBodyDescription() {
     getBodyDescription());
 }
 
-//skintone description
 function getSkinTone() {
   return skins[Math.floor(Math.random() * skins.length)];
 }
@@ -281,7 +253,6 @@ function setSkinTone() {
     getSkinTone());
 }
 
-//clothing description
 function getClothing() {
   return clothing[Math.floor(Math.random() * clothing.length)];
 }
@@ -290,7 +261,6 @@ function setClothing() {
   return (document.getElementById("clothing").innerText = getClothing());
 }
 
-//function for rolling dice w/ ability score modifiers
 function rollDice() {
   return Math.floor(Math.random() * 6) + 1;
 }
@@ -415,10 +385,8 @@ function setRolls() {
   }
 }
 
-//function for randomizing alignment and setting label
 function getRandomAlignment() {
-  confirmedAlignment =
-    alignments[Math.floor(Math.random() * alignments.length)];
+  let confirmedAlignment = alignments[Math.floor(Math.random() * alignments.length)];
   return confirmedAlignment;
 }
 
@@ -427,7 +395,6 @@ function setRandomAlignment() {
     getRandomAlignment());
 }
 
-//function for getting beliefs LAWFUL GOOD
 function getRandomBeliefLG() {
   return beliefsLG[Math.floor(Math.random() * beliefsLG.length)];
 }
@@ -439,7 +406,6 @@ function setBeliefsLG() {
   document.getElementById("alignment").innerText = "Lawful Good";
 }
 
-//function for getting beliefs LAWFUL NEUTRAL
 function getRandomBeliefLN() {
   return beliefsLN[Math.floor(Math.random() * beliefsLN.length)];
 }
@@ -451,7 +417,6 @@ function setBeliefsLN() {
   document.getElementById("alignment").innerText = "Lawful Neutral";
 }
 
-//function for getting beliefs LAWFUL EVIL
 function getRandomBeliefLE() {
   let confirmedBeliefLE =
     beliefsLE[Math.floor(Math.random() * beliefsLE.length)];
@@ -465,7 +430,6 @@ function setBeliefsLE() {
   document.getElementById("alignment").innerText = "Lawful Evil";
 }
 
-//function for getting beliefs NEUTRAL GOOD
 function getRandomBeliefNG() {
   return beliefsNG[Math.floor(Math.random() * beliefsNG.length)];
 }
@@ -477,7 +441,6 @@ function setBeliefsNG() {
   document.getElementById("alignment").innerText = "Neutral Good";
 }
 
-//function for getting beliefs NEUTRAL NEUTRAL
 function getRandomBeliefNN() {
   return beliefsNN[Math.floor(Math.random() * beliefsNN.length)];
 }
@@ -489,7 +452,6 @@ function setBeliefsNN() {
   document.getElementById("alignment").innerText = "True Neutral";
 }
 
-//function for getting beliefs NEUTRAL EVIL
 function getRandomBeliefNE() {
   return beliefsNE[Math.floor(Math.random() * beliefsNE.length)];
 }
@@ -501,7 +463,6 @@ function setBeliefsNE() {
   document.getElementById("alignment").innerText = "Neutral Evil";
 }
 
-//function for getting beliefs CHAOTIC GOOD
 function getRandomBeliefCG() {
   return beliefsCG[Math.floor(Math.random() * beliefsCG.length)];
 }
@@ -513,7 +474,6 @@ function setBeliefsCG() {
   document.getElementById("alignment").innerText = "Chaotic Good";
 }
 
-//function for getting beliefs CHAOTIC NEUTRAL
 function getRandomBeliefCN() {
   return beliefsCN[Math.floor(Math.random() * beliefsCN.length)];
 }
@@ -525,7 +485,6 @@ function setBeliefsCN() {
   document.getElementById("alignment").innerText = "Chaotic Neutral";
 }
 
-//function for getting beliefs CHAOTIC EVIL
 function getRandomBeliefCE() {
   return beliefsCE[Math.floor(Math.random() * beliefsCE.length)];
 }
@@ -537,7 +496,6 @@ function setBeliefsCE() {
   document.getElementById("alignment").innerText = "Chaotic Evil";
 }
 
-//function for randomizing beliefs on push of generate & randomize buttons
 function randomizeBeliefs() {
   getRandomAlignment();
   setRandomAlignment();
@@ -589,7 +547,6 @@ function randomizeBeliefs() {
   }
 }
 
-//function for getting random personality traits
 function getRandomTrait() {
   return personalityTraits[
     Math.floor(Math.random() * personalityTraits.length)
@@ -601,7 +558,6 @@ function setTraits() {
   document.getElementById("secondTrait").innerText = getRandomTrait();
 }
 
-//function for getting random plot hook
 function getRandomPlotHook() {
   return plotHooks[Math.floor(Math.random() * plotHooks.length)];
 }
@@ -610,52 +566,26 @@ function setPlotHook() {
   document.getElementById("plotHook").innerText = getRandomPlotHook();
 }
 
-//changes left side information on click of 'generate' button
-
 document.querySelector(".generate").addEventListener("click", setRandomSex);
-document
-  .querySelector(".generate")
-  .addEventListener("click", setRandomFirstName);
-document
-  .querySelector(".generate")
-  .addEventListener("click", setRandomLastName);
+document.querySelector(".generate").addEventListener("click", setRandomFirstName);
+document.querySelector(".generate").addEventListener("click", setRandomLastName);
 document.querySelector(".generate").addEventListener("click", setRandomAge);
 document.querySelector(".generate").addEventListener("click", setRandomRace);
 document.querySelector(".generate").addEventListener("click", setRandomJob);
-document
-  .querySelector(".generate")
-  .addEventListener("click", setRandomOrientation);
-document
-  .querySelector(".generate")
-  .addEventListener("click", setRandomRelationship);
-document
-  .querySelector(".generate")
-  .addEventListener("click", setRandomChildren);
-
+document.querySelector(".generate").addEventListener("click", setRandomOrientation);
+document.querySelector(".generate").addEventListener("click", setRandomRelationship);
+document.querySelector(".generate").addEventListener("click", setRandomChildren);
 document.querySelector(".generate").addEventListener("click", setPronoun);
-document
-  .querySelector(".generate")
-  .addEventListener("click", setOverallDescription);
+document.querySelector(".generate").addEventListener("click", setOverallDescription);
 document.querySelector(".generate").addEventListener("click", setEyes);
 document.querySelector(".generate").addEventListener("click", setHair);
 document.querySelector(".generate").addEventListener("click", setStyle);
 document.querySelector(".generate").addEventListener("click", setSkinTone);
 document.querySelector(".generate").addEventListener("click", setClothing);
-
-document
-  .querySelector(".generate")
-  .addEventListener("click", setBodyDescription);
-
-//changes ability scores
+document.querySelector(".generate").addEventListener("click", setBodyDescription);
 document.querySelector(".generate").addEventListener("click", setRolls);
-
-//changes personality traits
 document.querySelector(".generate").addEventListener("click", setTraits);
-
-//changes plot hook
 document.querySelector(".generate").addEventListener("click", setPlotHook);
-
-//changes beliefs based on individual alignment buttons
 document.getElementById("lawGood").addEventListener("click", setBeliefsLG);
 document.getElementById("lawNeu").addEventListener("click", setBeliefsLN);
 document.getElementById("lawEvil").addEventListener("click", setBeliefsLE);
@@ -665,9 +595,5 @@ document.getElementById("neuEvil").addEventListener("click", setBeliefsNE);
 document.getElementById("chaGood").addEventListener("click", setBeliefsCG);
 document.getElementById("chaNeu").addEventListener("click", setBeliefsCN);
 document.getElementById("chaEvil").addEventListener("click", setBeliefsCE);
-
-//randomizes alignment and beliefs on 'randomize' and 'generate' buttons
 document.querySelector(".generate").addEventListener("click", randomizeBeliefs);
-document
-  .querySelector(".randomize")
-  .addEventListener("click", randomizeBeliefs);
+document.querySelector(".randomize").addEventListener("click", randomizeBeliefs);
