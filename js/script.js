@@ -144,6 +144,9 @@ function setRandomRace() {
 }
 
 function setRandomLastName() {
+  if (selectedRace !== null) {
+    confirmedRace = selectedRace;
+  }
   if (
     confirmedRace == "Elf" ||
     confirmedRace == "Half-Elf" ||
@@ -347,8 +350,10 @@ function generateRandomCharacter() {
   if (selectedAlignment === null) {
     setRandomAlignment();
   }
+  if (selectedAlignment === null) {
+    setRandomLastName();
+  }
   setRandomFirstName();
-  setRandomLastName();
   setRandomAge();
   setRandomJob();
   setRandomOrientation();
@@ -392,4 +397,5 @@ document
 document.getElementById("raceSelect").addEventListener("change", function () {
   selectedRace = this.value;
   setRandomRace();
+  setRandomLastName();
 });
