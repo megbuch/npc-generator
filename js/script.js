@@ -337,13 +337,17 @@ function setRandomPlotHook() {
   document.getElementById("plotHook").innerText = getRandomElement(plotHooks);
 }
 
-console.log(selectedAlignment);
 function generateRandomCharacter() {
   if (selectedSex === null) {
     setRandomSex();
   }
+  if (selectedRace === null) {
+    setRandomRace();
+  }
+  if (selectedAlignment === null) {
+    setRandomAlignment();
+  }
   setRandomFirstName();
-  setRandomRace;
   setRandomLastName();
   setRandomAge();
   setRandomJob();
@@ -360,9 +364,6 @@ function generateRandomCharacter() {
   setRandomRolls();
   setRandomTraits();
   setRandomPlotHook();
-  if (selectedAlignment === null) {
-    setRandomAlignment();
-  }
   setRandomBeliefs();
 }
 
