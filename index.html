@@ -16,6 +16,65 @@
         <h1>NPC Generator</h1>
         <button class="btn generate">Generate NPC 🎲</button>
         <button class="btn randomize">Randomize Alignment 🎲</button>
+
+        <select id="sexSelect">
+          <option value="">Select Sex</option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+        </select>
+        <select id="raceSelect">
+          <option value="">Select Race</option>
+          <option value="Human">Human</option>
+          <option value="Dragonborn">Dragonborn</option>
+          <option value="Draconic Ancestry Dragonborn">
+            Draconic Ancestry Dragonborn
+          </option>
+          <option value="Dwarf">Dwarf</option>
+          <option value="Hill Dwarf">Hill Dwarf</option>
+          <option value="Mountain Dwarf">Mountain Dwarf</option>
+          <option value="Duergar Dwarf">Duergar Dwarf</option>
+          <option value="Deep Dwarf">Deep Dwarf</option>
+          <option value="Gold Dwarf">Gold Dwarf</option>
+          <option value="Shield Dwarf">Shield Dwarf</option>
+          <option value="Elf">Elf</option>
+          <option value="Half-Elf">Half-Elf</option>
+          <option value="High Elf">High Elf</option>
+          <option value="Wood Elf">Wood Elf</option>
+          <option value="Eladrin Elf">Eladrin Elf</option>
+          <option value="Drow Elf">Drow Elf</option>
+          <option value="Sea Elf">Sea Elf</option>
+          <option value="Gnome">Gnome</option>
+          <option value="Deep Gnome">Deep Gnome</option>
+          <option value="Rock Gnome">Rock Gnome</option>
+          <option value="Halfling">Halfling</option>
+          <option value="Lightfoot Halfling">Lightfoot Halfling</option>
+          <option value="Stout Halfling">Stout Halfling</option>
+          <option value="Orc">Orc</option>
+          <option value="Tiefling">Tiefling</option>
+          <option value="Asmodeus Tiefling">Asmodeus Tiefling</option>
+          <option value="Baalzebul Tiefling">Baalzebul Tiefling</option>
+          <option value="Dispater Tiefling">Dispater Tiefling</option>
+          <option value="Fierna Tiefling">Fierna Tiefling</option>
+          <option value="Glasya Tiefling">Glasya Tiefling</option>
+          <option value="Levistus Tiefling">Levistus Tiefling</option>
+          <option value="Mammon Tiefling">Mammon Tiefling</option>
+          <option value="Mephistopheles Tiefling">
+            Mephistopheles Tiefling
+          </option>
+          <option value="Zariel Tiefling">Zariel Tiefling</option>
+        </select>
+        <select id="alignmentSelect">
+          <option value="">Select Alignment</option>
+          <option value="Lawful Good">Lawful Good</option>
+          <option value="Lawful Neutral">Lawful Neutral</option>
+          <option value="Lawful Evil">Lawful Evil</option>
+          <option value="Neutral Good">Neutral Good</option>
+          <option value="True Neutral">True Neutral</option>
+          <option value="Neutral Evil">Neutral Evil</option>
+          <option value="Chaotic Good">Chaotic Good</option>
+          <option value="Chaotic Neutral">Chaotic Neutral</option>
+          <option value="Chaotic Evil">Chaotic Evil</option>
+        </select>
       </div>
       <div class="container-cards">
         <div class="section about">
@@ -102,31 +161,7 @@
           </div>
         </div>
         <div class="section beliefs-alignment">
-          <div class="subsection alignment">
-            <h3>Alignment</h3>
-            <!-- <div class="alignments">
-              <button id="lawGood" class="btn align">Lawful Good</button>
-              <button id="lawNeu" class="btn align">Lawful Neutral</button>
-              <button id="lawEvil" class="btn align">Lawful Evil</button>
-              <button id="neuGood" class="btn align">Neutral Good</button>
-              <button id="neu" class="btn align">True Neutral</button>
-              <button id="neuEvil" class="btn align">Neutral Evil</button>
-              <button id="chaGood" class="btn align">Chaotic Good</button>
-              <button id="chaNeu" class="btn align">Chaotic Neutral</button>
-              <button id="chaEvil" class="btn align">Chaotic Evil</button>
-            </div> -->
-            <select id="alignmentSelect">
-              <option value="Lawful Good">Lawful Good</option>
-              <option value="Lawful Neutral">Lawful Neutral</option>
-              <option value="Lawful Evil">Lawful Evil</option>
-              <option value="Neutral Good">Neutral Good</option>
-              <option value="True Neutral">True Neutral</option>
-              <option value="Neutral Evil">Neutral Evil</option>
-              <option value="Chaotic Good">Chaotic Good</option>
-              <option value="Chaotic Neutral">Chaotic Neutral</option>
-              <option value="Chaotic Evil">Chaotic Evil</option>
-            </select>
-          </div>
+          <h3>Alignment</h3>
           <h3 id="alignment">Neutral Good</h3>
           <div class="subsection beliefs">
             <h3>Beliefs</h3>

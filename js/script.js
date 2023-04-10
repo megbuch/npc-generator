@@ -86,44 +86,64 @@ const racialAbilityModifiers = {
   "Mephistopheles Tiefling": { str: 0, dex: 0, con: 0, int: 1, wis: 0, cha: 2 },
   "Zariel Tiefling": { str: 1, dex: 0, con: 0, int: 0, wis: 0, cha: 2 },
 };
-let confirmedRace = "";
-let lastName = "";
-let confirmedAlignment = "";
+
+let lastName = null;
+
+let selectedRace = null;
+let confirmedRace = null;
+
+let selectedSex = null;
+let confirmedSex = null;
+
+let selectedAlignment = null;
+let confirmedAlignment = null;
 
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
-function setRandomSexAndFirstName() {
-  const confirmedSex = getRandomElement(sexes);
-  const firstName =
-    confirmedSex === "female"
-      ? getRandomElement(femaleNames)
-      : getRandomElement(maleNames);
-
+function setRandomSex() {
+  if (selectedSex !== null) {
+    confirmedSex = selectedSex;
+  } else {
+    confirmedSex = getRandomElement(sexes);
+  }
   document.getElementById("sex").innerText =
     confirmedSex === "female" ? "Female" : "Male";
 
   let pronoun = document.getElementsByClassName("pronoun");
   for (let i = 0; i < pronoun.length; i++) {
-    if (confirmedSex == "female") {
+    if (confirmedSex === "female") {
       pronoun[i].innerText = "She";
     } else {
       pronoun[i].innerText = "He";
     }
   }
+}
 
-  return (document.getElementById("firstName").innerText = firstName);
+function setRandomFirstName() {
+  const firstName =
+    confirmedSex === "female"
+      ? getRandomElement(femaleNames)
+      : getRandomElement(maleNames);
+  document.getElementById("firstName").innerText = firstName;
 }
 
 function setRandomAge() {
   let age = getRandomElement(ages);
-  return (document.getElementById("age").innerText = age);
+  document.getElementById("age").innerText = age;
 }
 
-function setRandomRaceAndLastName() {
-  confirmedRace = getRandomElement(races);
+function setRandomRace() {
+  if (selectedRace !== null) {
+    confirmedRace = selectedRace;
+  } else {
+    confirmedRace = getRandomElement(races);
+  }
   document.getElementById("race").innerText = confirmedRace;
+}
+
+function setRandomLastName() {
   if (
     confirmedRace == "Elf" ||
     confirmedRace == "Half-Elf" ||
@@ -181,62 +201,57 @@ function setRandomRaceAndLastName() {
     lastName = `${getRandomElement(dragonbornNames)}
      of the Clan ${getRandomElement(dragonbornClans)}`;
   }
-  return (document.getElementById("surname").innerText = lastName);
+  document.getElementById("surname").innerText = lastName;
 }
 
 function setRandomJob() {
   getRandomElement(jobs);
-  return (document.getElementById("job").innerText = getRandomElement(jobs));
+  document.getElementById("job").innerText = getRandomElement(jobs);
 }
 
 function setRandomOrientation() {
-  return (document.getElementById("orientation").innerText =
-    getRandomElement(sexualOrientations));
+  document.getElementById("orientation").innerText =
+    getRandomElement(sexualOrientations);
 }
 
 function setRandomRelationship() {
-  return (document.getElementById("relationship").innerText =
-    getRandomElement(relationshipStatuses));
+  document.getElementById("relationship").innerText =
+    getRandomElement(relationshipStatuses);
 }
 
 function setRandomChildren() {
-  return (document.getElementById("children").innerText =
-    getRandomElement(children));
+  document.getElementById("children").innerText = getRandomElement(children);
 }
 
 function setRandomDescription() {
-  return (document.getElementById("overallDescription").innerText =
-    getRandomElement(overallAppearances));
+  document.getElementById("overallDescription").innerText =
+    getRandomElement(overallAppearances);
 }
 
 function setRandomEyes() {
-  return (document.getElementById("eyeColor").innerText =
-    getRandomElement(eyeColors));
+  document.getElementById("eyeColor").innerText = getRandomElement(eyeColors);
 }
 
 function setRandomHair() {
-  return (document.getElementById("hairColor").innerText =
-    getRandomElement(hairColors));
+  document.getElementById("hairColor").innerText = getRandomElement(hairColors);
 }
 
 function setRandomHairstyle() {
-  return (document.getElementById("hairStyle").innerText =
-    getRandomElement(hairStyles));
+  document.getElementById("hairStyle").innerText = getRandomElement(hairStyles);
 }
 
 function setRandomBodyDescription() {
-  return (document.getElementById("bodyDescription").innerText =
-    getRandomElement(bodyTypes));
+  document.getElementById("bodyDescription").innerText =
+    getRandomElement(bodyTypes);
 }
 
 function setRandomSkinTone() {
-  return (document.getElementById("skinToneDescription").innerText =
-    getRandomElement(skinTones));
+  document.getElementById("skinToneDescription").innerText =
+    getRandomElement(skinTones);
 }
 
 function setRandomClothing() {
-  return (document.getElementById("clothing").innerText =
-    getRandomElement(clothings));
+  document.getElementById("clothing").innerText = getRandomElement(clothings);
 }
 
 function rollThreeDice() {
@@ -271,12 +286,22 @@ function setRandomRolls() {
 }
 
 function setRandomAlignment() {
-  confirmedAlignment = getRandomElement(alignments);
+  if (selectedAlignment !== null) {
+    confirmedAlignment = selectedAlignment;
+  } else {
+    confirmedAlignment = getRandomElement(alignments);
+  }
   document.getElementById("alignment").innerText = confirmedAlignment;
   return confirmedAlignment;
 }
 
-function setBeliefs(alignment) {
+function setRandomBeliefs() {
+  if (selectedAlignment !== null) {
+    confirmedAlignment = selectedAlignment;
+  } else {
+    confirmedAlignment = getRandomElement(alignments);
+  }
+
   const beliefs = {
     "Lawful Good": beliefsLG,
     "Lawful Neutral": beliefsLN,
@@ -290,20 +315,15 @@ function setBeliefs(alignment) {
   };
 
   document.getElementById("firstBelief").innerText = getRandomElement(
-    beliefs[alignment]
+    beliefs[confirmedAlignment]
   );
   document.getElementById("secondBelief").innerText = getRandomElement(
-    beliefs[alignment]
+    beliefs[confirmedAlignment]
   );
   document.getElementById("thirdBelief").innerText = getRandomElement(
-    beliefs[alignment]
+    beliefs[confirmedAlignment]
   );
-  document.getElementById("alignment").innerText = alignment;
-}
-
-function randomizeBeliefs() {
-  setRandomAlignment();
-  setBeliefs(confirmedAlignment);
+  document.getElementById("alignment").innerText = confirmedAlignment;
 }
 
 function setRandomTraits() {
@@ -317,9 +337,14 @@ function setRandomPlotHook() {
   document.getElementById("plotHook").innerText = getRandomElement(plotHooks);
 }
 
+console.log(selectedAlignment);
 function generateRandomCharacter() {
-  setRandomSexAndFirstName();
-  setRandomRaceAndLastName();
+  if (selectedSex === null) {
+    setRandomSex();
+  }
+  setRandomFirstName();
+  setRandomRace;
+  setRandomLastName();
   setRandomAge();
   setRandomJob();
   setRandomOrientation();
@@ -335,7 +360,10 @@ function generateRandomCharacter() {
   setRandomRolls();
   setRandomTraits();
   setRandomPlotHook();
-  randomizeBeliefs();
+  if (selectedAlignment === null) {
+    setRandomAlignment();
+  }
+  setRandomBeliefs();
 }
 
 document
@@ -344,11 +372,23 @@ document
 
 document
   .querySelector(".randomize")
-  .addEventListener("click", randomizeBeliefs);
+  .addEventListener("click", setRandomBeliefs);
+
+document.getElementById("sexSelect").addEventListener("change", function () {
+  selectedSex = this.value;
+  setRandomSex();
+  setRandomFirstName();
+});
 
 document
   .getElementById("alignmentSelect")
   .addEventListener("change", function () {
-    const selectedAlignment = this.value;
-    setBeliefs(selectedAlignment);
+    selectedAlignment = this.value;
+    setRandomAlignment();
+    setRandomBeliefs();
   });
+
+document.getElementById("raceSelect").addEventListener("change", function () {
+  selectedRace = this.value;
+  setRandomRace();
+});
