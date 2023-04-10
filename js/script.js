@@ -21,17 +21,17 @@ import {
   ages,
   races,
   jobs,
-  sexualOrientation,
-  relationshipStatus,
+  sexualOrientations,
+  relationshipStatuses,
   children,
-  appearanceOverall,
-  eyeColor,
-  hairColor,
-  hairStyle,
-  body,
-  clothing,
+  overallAppearances,
+  eyeColors,
+  hairColors,
+  hairStyles,
+  bodyTypes,
+  clothings,
   alignments,
-  skins,
+  skinTones,
   beliefsLG,
   beliefsLN,
   beliefsLE,
@@ -122,111 +122,67 @@ function setRandomRaceAndLastName() {
   return (document.getElementById("surname").innerText = lastName);
 }
 
-function getRandomJob() {
-  return jobs[Math.floor(Math.random() * jobs.length)];
-}
-
 function setRandomJob() {
-  return (document.getElementById("job").innerText = getRandomJob());
-}
-
-function getRandomOrientation() {
-  return sexualOrientation[
-    Math.floor(Math.random() * sexualOrientation.length)
-  ];
+  getRandomElement(jobs);
+  return (document.getElementById("job").innerText = getRandomElement(jobs));
 }
 
 function setRandomOrientation() {
   return (document.getElementById("orientation").innerText =
-    getRandomOrientation());
-}
-
-function getRandomRelationship() {
-  return relationshipStatus[
-    Math.floor(Math.random() * relationshipStatus.length)
-  ];
+    getRandomElement(sexualOrientations));
 }
 
 function setRandomRelationship() {
   return (document.getElementById("relationship").innerText =
-    getRandomRelationship());
-}
-
-function getRandomChildren() {
-  return children[Math.floor(Math.random() * children.length)];
+    getRandomElement(relationshipStatuses));
 }
 
 function setRandomChildren() {
-  return (document.getElementById("children").innerText = getRandomChildren());
-}
-
-function getOverallDescription() {
-  return appearanceOverall[
-    Math.floor(Math.random() * appearanceOverall.length)
-  ];
+  return (document.getElementById("children").innerText =
+    getRandomElement(children));
 }
 
 function setOverallDescription() {
   return (document.getElementById("overallDescription").innerText =
-    getOverallDescription());
-}
-
-function getEyes() {
-  return eyeColor[Math.floor(Math.random() * eyeColor.length)];
+    getRandomElement(overallAppearances));
 }
 
 function setEyes() {
-  return (document.getElementById("eyeColor").innerText = getEyes());
-}
-
-function getHair() {
-  return hairColor[Math.floor(Math.random() * hairColor.length)];
+  return (document.getElementById("eyeColor").innerText =
+    getRandomElement(eyeColors));
 }
 
 function setHair() {
-  return (document.getElementById("hairColor").innerText = getHair());
-}
-
-function getStyle() {
-  return hairStyle[Math.floor(Math.random() * hairStyle.length)];
+  return (document.getElementById("hairColor").innerText =
+    getRandomElement(hairColors));
 }
 
 function setStyle() {
-  return (document.getElementById("hairStyle").innerText = getStyle());
-}
-
-function getBodyDescription() {
-  return body[Math.floor(Math.random() * body.length)];
+  return (document.getElementById("hairStyle").innerText =
+    getRandomElement(hairStyles));
 }
 
 function setBodyDescription() {
   return (document.getElementById("bodyDescription").innerText =
-    getBodyDescription());
-}
-
-function getSkinTone() {
-  return skins[Math.floor(Math.random() * skins.length)];
+    getRandomElement(bodyTypes));
 }
 
 function setSkinTone() {
   return (document.getElementById("skinToneDescription").innerText =
-    getSkinTone());
-}
-
-function getClothing() {
-  return clothing[Math.floor(Math.random() * clothing.length)];
+    getRandomElement(skinTones));
 }
 
 function setClothing() {
-  return (document.getElementById("clothing").innerText = getClothing());
-}
-
-function rollDice() {
-  return Math.floor(Math.random() * 6) + 1;
+  return (document.getElementById("clothing").innerText =
+    getRandomElement(clothings));
 }
 
 function rollThreeDice() {
-  return rollDice() + rollDice() + rollDice();
+  let rollTotal = 0;
+  for (let i = 0; i < 3; i++) {
+    rollTotal += Math.floor(Math.random() * 6) + 1;
+  }
+  return rollTotal;
 }
 
 function setRolls() {

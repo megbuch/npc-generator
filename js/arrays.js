@@ -200,7 +200,7 @@ const jobs = [
   "Takes Odd Jobs",
 ];
 
-const sexualOrientation = [
+const sexualOrientations = [
   "Straight",
   "Straight",
   "Straight",
@@ -219,7 +219,7 @@ const sexualOrientation = [
   "Gay",
 ];
 
-const relationshipStatus = [
+const relationshipStatuses = [
   "Single",
   "Single",
   "Single",
@@ -252,7 +252,7 @@ const children = [
   4,
 ];
 
-const appearanceOverall = [
+const overallAppearances = [
   "has freckled, rosy skin that gives off a youthful appearance.",
   "is classically beautiful, with a glass-like complexion and a soft, oval face.",
   "has a rather mysterious look. Is he hiding something?",
@@ -275,7 +275,7 @@ const appearanceOverall = [
   "is a bit ugly, but that's okay.",
 ];
 
-const eyeColor = [
+const eyeColors = [
   "dark brown",
   "brown",
   "light brown",
@@ -301,7 +301,7 @@ const eyeColor = [
   "bright amber",
 ];
 
-const hairColor = [
+const hairColors = [
   "jet black",
   "black",
   "indigo",
@@ -324,7 +324,7 @@ const hairColor = [
   "violet",
 ];
 
-const hairStyle = [
+const hairStyles = [
   "is kept neatly in a bun.",
   "has a slightly wavy texture.",
   "is pulled into an elegant french twist.",
@@ -362,7 +362,7 @@ const hairStyle = [
   "smells like roses.",
 ];
 
-const body = [
+const bodyTypes = [
   "has a fat build.",
   "is quite petite.",
   "is pretty muscular.",
@@ -387,7 +387,7 @@ const body = [
   "looks delicate and frail.",
 ];
 
-const clothing = [
+const clothings = [
   "is wearing a crimson silken cloak.",
   "is wearing a fitted leather bustier.",
   "is wearing a loose linen shirt and some old trousers.",
@@ -432,7 +432,7 @@ const alignments = [
   "Chaotic Evil",
 ];
 
-const skins = [
+const skinTones = [
   "fair",
   "pale",
   "light",
@@ -648,17 +648,17 @@ export {
   ages,
   races,
   jobs,
-  sexualOrientation,
-  relationshipStatus,
+  sexualOrientations,
+  relationshipStatuses,
   children,
-  appearanceOverall,
-  eyeColor,
-  hairColor,
-  hairStyle,
-  body,
-  clothing,
+  overallAppearances,
+  eyeColors,
+  hairColors,
+  hairStyles,
+  bodyTypes,
+  clothings,
   alignments,
-  skins,
+  skinTones,
   beliefsLG,
   beliefsLN,
   beliefsLE,
