@@ -1,10 +1,7 @@
-const sex = ["female", "male"];
-
-let firstName = "";
-let lastName = "";
-let confirmedSex = "";
-let confirmedAlignment = "";
+const sexes = ["female", "male"];
 let confirmedRace = "";
+let lastName = "";
+let confirmedAlignment = "";
 
 import {
   femaleNames,
@@ -48,57 +45,40 @@ import {
   plotHooks,
 } from "./arrays.js";
 
-function getRandomSex() {
-  confirmedSex = sex[Math.floor(Math.random() * sex.length)];
-  return confirmedSex;
+function getRandomElement(array) {
+  return array[Math.floor(Math.random() * array.length)];
 }
 
-function getRandomFirstName() {
-  getRandomSex();
-  setRandomSex();
-  if (confirmedSex == "female") {
-    firstName = `${
-      femaleNames[Math.floor(Math.random() * femaleNames.length)]
-    }`;
-  } else if (confirmedSex == "male") {
-    firstName = `${maleNames[Math.floor(Math.random() * maleNames.length)]}`;
+function setRandomSexAndFirstName() {
+  const confirmedSex = getRandomElement(sexes);
+  const firstName =
+    confirmedSex === "female"
+      ? getRandomElement(femaleNames)
+      : getRandomElement(maleNames);
+
+  document.getElementById("sex").innerText =
+    confirmedSex === "female" ? "Female" : "Male";
+
+  let pronoun = document.getElementsByClassName("pronoun");
+  for (let i = 0; i < pronoun.length; i++) {
+    if (confirmedSex == "female") {
+      pronoun[i].innerText = "She";
+    } else {
+      pronoun[i].innerText = "He";
+    }
   }
-  return firstName;
-}
 
-function setRandomSex() {
-  if (confirmedSex == "female") {
-    return (document.getElementById("sex").innerText = "Female");
-  } else {
-    return (document.getElementById("sex").innerText = "Male");
-  }
-}
-
-function setRandomFirstName() {
-  getRandomFirstName();
-  document.getElementById("firstName").innerText = firstName;
-}
-
-function getRandomAge() {
-  return ages[Math.floor(Math.random() * ages.length)];
+  return (document.getElementById("firstName").innerText = firstName);
 }
 
 function setRandomAge() {
-  return (document.getElementById("age").innerText = getRandomAge());
+  let age = getRandomElement(ages);
+  return (document.getElementById("age").innerText = age);
 }
 
-function getRandomRace() {
-  confirmedRace = races[Math.floor(Math.random() * races.length)];
-  return confirmedRace;
-}
-
-function setRandomRace() {
+function setRandomRaceAndLastName() {
+  confirmedRace = getRandomElement(races);
   document.getElementById("race").innerText = confirmedRace;
-}
-
-function getRandomLastName() {
-  getRandomRace();
-  setRandomRace();
   if (
     confirmedRace == "Elf" ||
     confirmedRace == "Half-Elf" ||
@@ -106,9 +86,9 @@ function getRandomLastName() {
     confirmedRace == "Wood Elf" ||
     confirmedRace == "Eladrin Elf"
   ) {
-    lastName = `${elfNames[Math.floor(Math.random() * elfNames.length)]}`;
+    lastName = `${getRandomElement(elfNames)}`;
   } else if (confirmedRace == "Human") {
-    lastName = `${humanNames[Math.floor(Math.random() * humanNames.length)]}`;
+    lastName = `${getRandomElement(humanNames)}`;
   } else if (
     confirmedRace == "Dwarf" ||
     confirmedRace == "Hill Dwarf" ||
@@ -136,19 +116,10 @@ function getRandomLastName() {
       tieflingNames[Math.floor(Math.random() * tieflingNames.length)]
     }`;
   } else if (confirmedRace == "Dragonborn") {
-    lastName = `${
-      dragonbornNames[Math.floor(Math.random() * dragonbornNames.length)]
-    }
-     of the Clan ${
-       dragonbornClans[Math.floor(Math.random() * dragonbornClans.length)]
-     }`;
+    lastName = `${getRandomElement(dragonbornNames)}
+     of the Clan ${getRandomElement(dragonbornClans)}`;
   }
-  return lastName;
-}
-
-function setRandomLastName() {
-  getRandomLastName();
-  document.getElementById("surname").innerText = lastName;
+  return (document.getElementById("surname").innerText = lastName);
 }
 
 function getRandomJob() {
@@ -187,17 +158,6 @@ function getRandomChildren() {
 
 function setRandomChildren() {
   return (document.getElementById("children").innerText = getRandomChildren());
-}
-
-function setPronoun() {
-  let pronoun = document.getElementsByClassName("pronoun");
-  for (let i = 0; i < pronoun.length; i++) {
-    if (confirmedSex == "female") {
-      pronoun[i].innerText = "She";
-    } else {
-      pronoun[i].innerText = "He";
-    }
-  }
 }
 
 function getOverallDescription() {
@@ -386,7 +346,8 @@ function setRolls() {
 }
 
 function getRandomAlignment() {
-  let confirmedAlignment = alignments[Math.floor(Math.random() * alignments.length)];
+  let confirmedAlignment =
+    alignments[Math.floor(Math.random() * alignments.length)];
   return confirmedAlignment;
 }
 
@@ -566,23 +527,34 @@ function setPlotHook() {
   document.getElementById("plotHook").innerText = getRandomPlotHook();
 }
 
-document.querySelector(".generate").addEventListener("click", setRandomSex);
-document.querySelector(".generate").addEventListener("click", setRandomFirstName);
-document.querySelector(".generate").addEventListener("click", setRandomLastName);
+document
+  .querySelector(".generate")
+  .addEventListener("click", setRandomSexAndFirstName);
+document
+  .querySelector(".generate")
+  .addEventListener("click", setRandomRaceAndLastName);
 document.querySelector(".generate").addEventListener("click", setRandomAge);
-document.querySelector(".generate").addEventListener("click", setRandomRace);
 document.querySelector(".generate").addEventListener("click", setRandomJob);
-document.querySelector(".generate").addEventListener("click", setRandomOrientation);
-document.querySelector(".generate").addEventListener("click", setRandomRelationship);
-document.querySelector(".generate").addEventListener("click", setRandomChildren);
-document.querySelector(".generate").addEventListener("click", setPronoun);
-document.querySelector(".generate").addEventListener("click", setOverallDescription);
+document
+  .querySelector(".generate")
+  .addEventListener("click", setRandomOrientation);
+document
+  .querySelector(".generate")
+  .addEventListener("click", setRandomRelationship);
+document
+  .querySelector(".generate")
+  .addEventListener("click", setRandomChildren);
+document
+  .querySelector(".generate")
+  .addEventListener("click", setOverallDescription);
 document.querySelector(".generate").addEventListener("click", setEyes);
 document.querySelector(".generate").addEventListener("click", setHair);
 document.querySelector(".generate").addEventListener("click", setStyle);
 document.querySelector(".generate").addEventListener("click", setSkinTone);
 document.querySelector(".generate").addEventListener("click", setClothing);
-document.querySelector(".generate").addEventListener("click", setBodyDescription);
+document
+  .querySelector(".generate")
+  .addEventListener("click", setBodyDescription);
 document.querySelector(".generate").addEventListener("click", setRolls);
 document.querySelector(".generate").addEventListener("click", setTraits);
 document.querySelector(".generate").addEventListener("click", setPlotHook);
@@ -596,4 +568,6 @@ document.getElementById("chaGood").addEventListener("click", setBeliefsCG);
 document.getElementById("chaNeu").addEventListener("click", setBeliefsCN);
 document.getElementById("chaEvil").addEventListener("click", setBeliefsCE);
 document.querySelector(".generate").addEventListener("click", randomizeBeliefs);
-document.querySelector(".randomize").addEventListener("click", randomizeBeliefs);
+document
+  .querySelector(".randomize")
+  .addEventListener("click", randomizeBeliefs);
