@@ -45,6 +45,52 @@ import {
   plotHooks,
 } from "./arrays.js";
 
+const racialAbilityModifiers = {
+  Dragonborn: { str: 2, dex: 0, con: 0, int: 0, wis: 0, cha: 1 },
+  "Draconic Ancestry Dragonborn": {
+    str: 2,
+    dex: 0,
+    con: 0,
+    int: 0,
+    wis: 0,
+    cha: 1,
+  },
+  Dwarf: { str: 0, dex: 0, con: 2, int: 0, wis: 0, cha: 0 },
+  "Hill Dwarf": { str: 0, dex: 0, con: 2, int: 0, wis: 1, cha: 0 },
+  "Mountain Dwarf": { str: 2, dex: 0, con: 2, int: 0, wis: 0, cha: 0 },
+  "Duergar Dwarf": { str: 1, dex: 0, con: 2, int: 0, wis: 0, cha: 0 },
+  "Deep Dwarf": { str: 0, dex: 0, con: 2, int: 0, wis: 1, cha: 0 },
+  "Arctic Dwarf": { str: 0, dex: 1, con: 2, int: 0, wis: 1, cha: 0 },
+  "Gold Dwarf": { str: 0, dex: 0, con: 2, int: 0, wis: 1, cha: 0 },
+  "Shield Dwarf": { str: 0, dex: 0, con: 2, int: 0, wis: 1, cha: 0 },
+  Elf: { str: 0, dex: 2, con: 0, int: 1, wis: 0, cha: 0 },
+  "Eladrin Elf": { str: 0, dex: 2, con: 0, int: 1, wis: 0, cha: 0 },
+  "High Elf": { str: 0, dex: 2, con: 0, int: 1, wis: 0, cha: 0 },
+  "Wood Elf": { str: 0, dex: 2, con: 0, int: 0, wis: 1, cha: 0 },
+  "Half-Elf": { str: 0, dex: 1, con: 0, int: 0, wis: 1, cha: 2 },
+  "Drow Elf": { str: 0, dex: 2, con: 0, int: 0, wis: 0, cha: 1 },
+  "Sea Elf": { str: 0, dex: 2, con: 1, int: 0, wis: 0, cha: 0 },
+  Gnome: { str: 0, dex: 0, con: 0, int: 2, wis: 0, cha: 0 },
+  "Deep Gnome": { str: 0, dex: 1, con: 0, int: 2, wis: 0, cha: 0 },
+  "Rock Gnome": { str: 0, dex: 0, con: 1, int: 2, wis: 0, cha: 0 },
+  Halfling: { str: 0, dex: 2, con: 0, int: 2, wis: 0, cha: 1 },
+  "Lightfoot Halfling": { str: 0, dex: 2, con: 0, int: 0, wis: 0, cha: 1 },
+  "Stout Halfling": { str: 0, dex: 2, con: 1, int: 0, wis: 0, cha: 0 },
+  Orc: { str: 2, dex: 0, con: 1, int: 0, wis: 0, cha: 0 },
+  "Half Orc": { str: 2, dex: 0, con: 1, int: 0, wis: 0, cha: 0 },
+  Human: { str: 1, dex: 1, con: 1, int: 1, wis: 1, cha: 1 },
+  Tiefling: { str: 0, dex: 2, con: 0, int: 1, wis: 0, cha: 2 },
+  "Asmodeus Tiefling": { str: 0, dex: 0, con: 1, int: 0, wis: 0, cha: 2 },
+  "Baalzebul Tiefling": { str: 0, dex: 0, con: 0, int: 1, wis: 0, cha: 2 },
+  "Dispater Tiefling": { str: 0, dex: 1, con: 1, int: 0, wis: 0, cha: 2 },
+  "Fierna Tiefling": { str: 0, dex: 0, con: 0, int: 0, wis: 1, cha: 2 },
+  "Glasya Tiefling": { str: 0, dex: 1, con: 0, int: 0, wis: 0, cha: 2 },
+  "Levistus Tiefling": { str: 0, dex: 0, con: 1, int: 0, wis: 0, cha: 2 },
+  "Mammon Tiefling": { str: 0, dex: 0, con: 0, int: 1, wis: 0, cha: 2 },
+  "Mephistopheles Tiefling": { str: 0, dex: 0, con: 0, int: 1, wis: 0, cha: 2 },
+  "Zariel Tiefling": { str: 1, dex: 0, con: 0, int: 0, wis: 0, cha: 2 },
+};
+
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
@@ -84,7 +130,9 @@ function setRandomRaceAndLastName() {
     confirmedRace == "Half-Elf" ||
     confirmedRace == "High Elf" ||
     confirmedRace == "Wood Elf" ||
-    confirmedRace == "Eladrin Elf"
+    confirmedRace == "Eladrin Elf" ||
+    confirmedRace == "Drow Elf" ||
+    confirmedRace == "Sea Elf"
   ) {
     lastName = `${getRandomElement(elfNames)}`;
   } else if (confirmedRace == "Human") {
@@ -92,30 +140,45 @@ function setRandomRaceAndLastName() {
   } else if (
     confirmedRace == "Dwarf" ||
     confirmedRace == "Hill Dwarf" ||
-    confirmedRace == "Mountain Dwarf"
+    confirmedRace == "Mountain Dwarf" ||
+    confirmedRace == "Duergar Dwarf" ||
+    confirmedRace == "Deep Dwarf" ||
+    confirmedRace == "Arctic Dwarf" ||
+    confirmedRace == "Gold Dwarf" ||
+    confirmedRace == "Shield Dwarf"
   ) {
-    lastName = `${dwarfNames[Math.floor(Math.random() * dwarfNames.length)]}`;
+    lastName = `${getRandomElement(dwarfNames)}`;
   } else if (
     confirmedRace == "Gnome" ||
     confirmedRace == "Deep Gnome" ||
     confirmedRace == "Rock Gnome"
   ) {
-    lastName = `${gnomeNames[Math.floor(Math.random() * gnomeNames.length)]}`;
+    lastName = `${getRandomElement(gnomeNames)}`;
   } else if (
     confirmedRace == "Halfling" ||
     confirmedRace == "Lightfoot Halfling" ||
-    confirmedRace == "StoutHalfling"
+    confirmedRace == "Stout Halfling"
   ) {
-    lastName = `${
-      halflingNames[Math.floor(Math.random() * halflingNames.length)]
-    }`;
+    lastName = `${getRandomElement(halflingNames)}`;
   } else if (confirmedRace == "Orc" || confirmedRace == "Half-Orc") {
-    lastName = `${orcNames[Math.floor(Math.random() * orcNames.length)]}`;
-  } else if (confirmedRace == "Tiefling") {
-    lastName = `${
-      tieflingNames[Math.floor(Math.random() * tieflingNames.length)]
-    }`;
-  } else if (confirmedRace == "Dragonborn") {
+    lastName = `${getRandomElement(orcNames)}`;
+  } else if (
+    confirmedRace == "Tiefling" ||
+    confirmedRace == "Asmodeus Tiefling" ||
+    confirmedRace == "Baalzebul Tiefling" ||
+    confirmedRace == "Dispater Tiefling" ||
+    confirmedRace == "Fierna Tiefling" ||
+    confirmedRace == "Glasya Tiefling" ||
+    confirmedRace == "Levistus Tiefling" ||
+    confirmedRace == "Mammon Tiefling" ||
+    confirmedRace == "Mephistopheles Tiefling" ||
+    confirmedRace == "Zariel Tiefling"
+  ) {
+    lastName = `${getRandomElement(tieflingNames)}`;
+  } else if (
+    confirmedRace == "Dragonborn" ||
+    confirmedRace == "Draconic Ancestry Dragonborn"
+  ) {
     lastName = `${getRandomElement(dragonbornNames)}
      of the Clan ${getRandomElement(dragonbornClans)}`;
   }
@@ -186,118 +249,25 @@ function rollThreeDice() {
 }
 
 function setRolls() {
-  if (confirmedRace == "Dragonborn") {
-    document.getElementById("str").innerText = `${rollThreeDice() + 2} (+2)`;
-    document.getElementById("dex").innerText = rollThreeDice();
-    document.getElementById("con").innerText = rollThreeDice();
-    document.getElementById("int").innerText = rollThreeDice();
-    document.getElementById("wis").innerText = rollThreeDice();
-    document.getElementById("cha").innerText = `${rollThreeDice() + 1} (+1)`;
-  } else if (confirmedRace == "Dwarf") {
-    document.getElementById("str").innerText = rollThreeDice();
-    document.getElementById("dex").innerText = rollThreeDice();
-    document.getElementById("con").innerText = `${rollThreeDice() + 2} (+2)`;
-    document.getElementById("int").innerText = rollThreeDice();
-    document.getElementById("wis").innerText = rollThreeDice();
-    document.getElementById("cha").innerText = rollThreeDice();
-  } else if (confirmedRace == "Hill Dwarf") {
-    document.getElementById("str").innerText = rollThreeDice();
-    document.getElementById("dex").innerText = rollThreeDice();
-    document.getElementById("con").innerText = `${rollThreeDice() + 2} (+2)`;
-    document.getElementById("int").innerText = rollThreeDice();
-    document.getElementById("wis").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("cha").innerText = rollThreeDice();
-  } else if (confirmedRace == "Mountain Dwarf") {
-    document.getElementById("str").innerText = `${rollThreeDice() + 2} (+2)`;
-    document.getElementById("dex").innerText = rollThreeDice();
-    document.getElementById("con").innerText = `${rollThreeDice() + 2} (+2)`;
-    document.getElementById("int").innerText = rollThreeDice();
-    document.getElementById("wis").innerText = rollThreeDice();
-    document.getElementById("cha").innerText = rollThreeDice();
-  } else if (confirmedRace == "Elf" || confirmedRace == "Halfling") {
-    document.getElementById("str").innerText = rollThreeDice();
-    document.getElementById("dex").innerText = `${rollThreeDice() + 2} (+2)`;
-    document.getElementById("con").innerText = rollThreeDice();
-    document.getElementById("int").innerText = rollThreeDice();
-    document.getElementById("wis").innerText = rollThreeDice();
-    document.getElementById("cha").innerText = rollThreeDice();
-  } else if (confirmedRace == "Eladrin Elf" || confirmedRace == "High Elf") {
-    document.getElementById("str").innerText = rollThreeDice();
-    document.getElementById("dex").innerText = `${rollThreeDice() + 2} (+2)`;
-    document.getElementById("con").innerText = rollThreeDice();
-    document.getElementById("int").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("wis").innerText = rollThreeDice();
-    document.getElementById("cha").innerText = rollThreeDice();
-  } else if (confirmedRace == "Wood Elf") {
-    document.getElementById("str").innerText = rollThreeDice();
-    document.getElementById("dex").innerText = `${rollThreeDice() + 2} (+2)`;
-    document.getElementById("con").innerText = rollThreeDice();
-    document.getElementById("int").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("wis").innerText = rollThreeDice();
-    document.getElementById("cha").innerText = rollThreeDice();
-  } else if (confirmedRace == "Half-Elf") {
-    document.getElementById("str").innerText = rollThreeDice();
-    document.getElementById("dex").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("con").innerText = rollThreeDice();
-    document.getElementById("int").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("wis").innerText = rollThreeDice();
-    document.getElementById("cha").innerText = `${rollThreeDice() + 2} (+2)`;
-  } else if (confirmedRace == "Gnome") {
-    document.getElementById("str").innerText = rollThreeDice();
-    document.getElementById("dex").innerText = rollThreeDice();
-    document.getElementById("con").innerText = rollThreeDice();
-    document.getElementById("int").innerText = `${rollThreeDice() + 2} (+2)`;
-    document.getElementById("wis").innerText = rollThreeDice();
-    document.getElementById("cha").innerText = rollThreeDice();
-  } else if (confirmedRace == "Deep Gnome") {
-    document.getElementById("str").innerText = rollThreeDice();
-    document.getElementById("dex").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("con").innerText = rollThreeDice();
-    document.getElementById("int").innerText = `${rollThreeDice() + 2} (+2)`;
-    document.getElementById("wis").innerText = rollThreeDice();
-    document.getElementById("cha").innerText = rollThreeDice();
-  } else if (confirmedRace == "Rock Gnome") {
-    document.getElementById("str").innerText = rollThreeDice();
-    document.getElementById("dex").innerText = rollThreeDice();
-    document.getElementById("con").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("int").innerText = `${rollThreeDice() + 2} (+2)`;
-    document.getElementById("wis").innerText = rollThreeDice();
-    document.getElementById("cha").innerText = rollThreeDice();
-  } else if (confirmedRace == "Lightfoot Halfling") {
-    document.getElementById("str").innerText = rollThreeDice();
-    document.getElementById("dex").innerText = `${rollThreeDice() + 2} (+2)`;
-    document.getElementById("con").innerText = rollThreeDice();
-    document.getElementById("int").innerText = rollThreeDice();
-    document.getElementById("wis").innerText = rollThreeDice();
-    document.getElementById("cha").innerText = `${rollThreeDice() + 1} (+1)`;
-  } else if (confirmedRace == "Stout Halfling") {
-    document.getElementById("str").innerText = rollThreeDice();
-    document.getElementById("dex").innerText = `${rollThreeDice() + 2} (+2)`;
-    document.getElementById("con").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("int").innerText = rollThreeDice();
-    document.getElementById("wis").innerText = rollThreeDice();
-    document.getElementById("cha").innerText = rollThreeDice();
-  } else if (confirmedRace == "Orc" || confirmedRace == "Half-Orc") {
-    document.getElementById("str").innerText = `${rollThreeDice() + 2} (+2)`;
-    document.getElementById("dex").innerText = rollThreeDice();
-    document.getElementById("con").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("int").innerText = rollThreeDice();
-    document.getElementById("wis").innerText = rollThreeDice();
-    document.getElementById("cha").innerText = rollThreeDice();
-  } else if (confirmedRace == "Human") {
-    document.getElementById("str").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("dex").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("con").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("int").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("wis").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("cha").innerText = `${rollThreeDice() + 1} (+1)`;
-  } else if (confirmedRace == "Tiefling") {
-    document.getElementById("str").innerText = rollThreeDice();
-    document.getElementById("dex").innerText = rollThreeDice();
-    document.getElementById("con").innerText = rollThreeDice();
-    document.getElementById("int").innerText = `${rollThreeDice() + 1} (+1)`;
-    document.getElementById("wis").innerText = rollThreeDice();
-    document.getElementById("cha").innerText = `${rollThreeDice() + 2} (+2)`;
+  const abilityModifiers = racialAbilityModifiers[confirmedRace];
+  for (const ability in abilityModifiers) {
+    const modifier = abilityModifiers[ability];
+    const score = modifier === 0 ? rollThreeDice() : rollThreeDice() + modifier;
+    const newScore =
+      modifier === 0 ? score : `${score + modifier} (+${modifier})`;
+    if (ability === "str") {
+      document.getElementById("str").innerText = newScore;
+    } else if (ability === "dex") {
+      document.getElementById("dex").innerText = newScore;
+    } else if (ability === "con") {
+      document.getElementById("con").innerText = newScore;
+    } else if (ability === "int") {
+      document.getElementById("int").innerText = newScore;
+    } else if (ability === "wis") {
+      document.getElementById("wis").innerText = newScore;
+    } else if (ability === "cha") {
+      document.getElementById("cha").innerText = newScore;
+    }
   }
 }
 
