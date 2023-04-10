@@ -269,21 +269,23 @@ function setRandomRolls() {
   const abilityModifiers = racialAbilityModifiers[confirmedRace];
   for (const ability in abilityModifiers) {
     const modifier = abilityModifiers[ability];
-    const score = modifier === 0 ? rollThreeDice() : rollThreeDice() + modifier;
-    const newScore =
-      modifier === 0 ? score : `${score + modifier} (+${modifier})`;
+    let baseAbilityScore = rollThreeDice();
+    const modifiedAbilityScore =
+      modifier === 0
+        ? baseAbilityScore
+        : `${baseAbilityScore + modifier} (+${modifier})`;
     if (ability === "str") {
-      document.getElementById("str").innerText = newScore;
+      document.getElementById("str").innerText = modifiedAbilityScore;
     } else if (ability === "dex") {
-      document.getElementById("dex").innerText = newScore;
+      document.getElementById("dex").innerText = modifiedAbilityScore;
     } else if (ability === "con") {
-      document.getElementById("con").innerText = newScore;
+      document.getElementById("con").innerText = modifiedAbilityScore;
     } else if (ability === "int") {
-      document.getElementById("int").innerText = newScore;
+      document.getElementById("int").innerText = modifiedAbilityScore;
     } else if (ability === "wis") {
-      document.getElementById("wis").innerText = newScore;
+      document.getElementById("wis").innerText = modifiedAbilityScore;
     } else if (ability === "cha") {
-      document.getElementById("cha").innerText = newScore;
+      document.getElementById("cha").innerText = modifiedAbilityScore;
     }
   }
 }
