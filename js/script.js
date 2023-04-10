@@ -346,30 +346,9 @@ document
   .querySelector(".randomize")
   .addEventListener("click", randomizeBeliefs);
 
-document.getElementById("lawGood").addEventListener("click", function () {
-  setBeliefs("Lawful Good");
-});
-document.getElementById("lawNeu").addEventListener("click", function () {
-  setBeliefs("Lawful Neutral");
-});
-document.getElementById("lawEvil").addEventListener("click", function () {
-  setBeliefs("Lawful Evil");
-});
-document.getElementById("neuGood").addEventListener("click", function () {
-  setBeliefs("Neutral Good");
-});
-document.getElementById("neu").addEventListener("click", function () {
-  setBeliefs("True Neutral");
-});
-document.getElementById("neuEvil").addEventListener("click", function () {
-  setBeliefs("Neutral Evil");
-});
-document.getElementById("chaGood").addEventListener("click", function () {
-  setBeliefs("Chaotic Good");
-});
-document.getElementById("chaNeu").addEventListener("click", function () {
-  setBeliefs("Chaotic Neutral");
-});
-document.getElementById("chaEvil").addEventListener("click", function () {
-  setBeliefs("Chaotic Evil");
-});
+document
+  .getElementById("alignmentSelect")
+  .addEventListener("change", function () {
+    const selectedAlignment = this.value;
+    setBeliefs(selectedAlignment);
+  });
