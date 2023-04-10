@@ -350,10 +350,8 @@ function generateRandomCharacter() {
   if (selectedAlignment === null) {
     setRandomAlignment();
   }
-  if (selectedAlignment === null) {
-    setRandomLastName();
-  }
   setRandomFirstName();
+  setRandomLastName();
   setRandomAge();
   setRandomJob();
   setRandomOrientation();
