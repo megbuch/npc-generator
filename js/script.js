@@ -204,37 +204,37 @@ function setRandomChildren() {
     getRandomElement(children));
 }
 
-function setOverallDescription() {
+function setRandomDescription() {
   return (document.getElementById("overallDescription").innerText =
     getRandomElement(overallAppearances));
 }
 
-function setEyes() {
+function setRandomEyes() {
   return (document.getElementById("eyeColor").innerText =
     getRandomElement(eyeColors));
 }
 
-function setHair() {
+function setRandomHair() {
   return (document.getElementById("hairColor").innerText =
     getRandomElement(hairColors));
 }
 
-function setStyle() {
+function setRandomHairstyle() {
   return (document.getElementById("hairStyle").innerText =
     getRandomElement(hairStyles));
 }
 
-function setBodyDescription() {
+function setRandomBodyDescription() {
   return (document.getElementById("bodyDescription").innerText =
     getRandomElement(bodyTypes));
 }
 
-function setSkinTone() {
+function setRandomSkinTone() {
   return (document.getElementById("skinToneDescription").innerText =
     getRandomElement(skinTones));
 }
 
-function setClothing() {
+function setRandomClothing() {
   return (document.getElementById("clothing").innerText =
     getRandomElement(clothings));
 }
@@ -247,7 +247,7 @@ function rollThreeDice() {
   return rollTotal;
 }
 
-function setRolls() {
+function setRandomRolls() {
   const abilityModifiers = racialAbilityModifiers[confirmedRace];
   for (const ability in abilityModifiers) {
     const modifier = abilityModifiers[ability];
@@ -306,56 +306,46 @@ function randomizeBeliefs() {
   setBeliefs(confirmedAlignment);
 }
 
-function getRandomTrait() {
-  return personalityTraits[
-    Math.floor(Math.random() * personalityTraits.length)
-  ];
+function setRandomTraits() {
+  document.getElementById("firstTrait").innerText =
+    getRandomElement(personalityTraits);
+  document.getElementById("secondTrait").innerText =
+    getRandomElement(personalityTraits);
 }
 
-function setTraits() {
-  document.getElementById("firstTrait").innerText = getRandomTrait();
-  document.getElementById("secondTrait").innerText = getRandomTrait();
+function setRandomPlotHook() {
+  document.getElementById("plotHook").innerText = getRandomElement(plotHooks);
 }
 
-function getRandomPlotHook() {
-  return plotHooks[Math.floor(Math.random() * plotHooks.length)];
+function generateRandomCharacter() {
+  setRandomSexAndFirstName();
+  setRandomRaceAndLastName();
+  setRandomAge();
+  setRandomJob();
+  setRandomOrientation();
+  setRandomRelationship();
+  setRandomChildren();
+  setRandomDescription();
+  setRandomEyes();
+  setRandomHair();
+  setRandomHairstyle();
+  setRandomSkinTone();
+  setRandomClothing();
+  setRandomBodyDescription();
+  setRandomRolls();
+  setRandomTraits();
+  setRandomPlotHook();
+  randomizeBeliefs();
 }
 
-function setPlotHook() {
-  document.getElementById("plotHook").innerText = getRandomPlotHook();
-}
+document
+  .querySelector(".generate")
+  .addEventListener("click", generateRandomCharacter);
 
 document
-  .querySelector(".generate")
-  .addEventListener("click", setRandomSexAndFirstName);
-document
-  .querySelector(".generate")
-  .addEventListener("click", setRandomRaceAndLastName);
-document.querySelector(".generate").addEventListener("click", setRandomAge);
-document.querySelector(".generate").addEventListener("click", setRandomJob);
-document
-  .querySelector(".generate")
-  .addEventListener("click", setRandomOrientation);
-document
-  .querySelector(".generate")
-  .addEventListener("click", setRandomRelationship);
-document
-  .querySelector(".generate")
-  .addEventListener("click", setRandomChildren);
-document
-  .querySelector(".generate")
-  .addEventListener("click", setOverallDescription);
-document.querySelector(".generate").addEventListener("click", setEyes);
-document.querySelector(".generate").addEventListener("click", setHair);
-document.querySelector(".generate").addEventListener("click", setStyle);
-document.querySelector(".generate").addEventListener("click", setSkinTone);
-document.querySelector(".generate").addEventListener("click", setClothing);
-document
-  .querySelector(".generate")
-  .addEventListener("click", setBodyDescription);
-document.querySelector(".generate").addEventListener("click", setRolls);
-document.querySelector(".generate").addEventListener("click", setTraits);
-document.querySelector(".generate").addEventListener("click", setPlotHook);
+  .querySelector(".randomize")
+  .addEventListener("click", randomizeBeliefs);
+
 document.getElementById("lawGood").addEventListener("click", function () {
   setBeliefs("Lawful Good");
 });
@@ -383,7 +373,3 @@ document.getElementById("chaNeu").addEventListener("click", function () {
 document.getElementById("chaEvil").addEventListener("click", function () {
   setBeliefs("Chaotic Evil");
 });
-document.querySelector(".generate").addEventListener("click", randomizeBeliefs);
-document
-  .querySelector(".randomize")
-  .addEventListener("click", randomizeBeliefs);
