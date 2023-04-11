@@ -376,10 +376,6 @@ document
   .querySelector(".generate")
   .addEventListener("click", generateRandomCharacter);
 
-document
-  .querySelector(".randomize")
-  .addEventListener("click", setRandomBeliefs);
-
 document.getElementById("sexSelect").addEventListener("change", function () {
   selectedSex = this.value;
   setRandomSex();
