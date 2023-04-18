@@ -10,7 +10,7 @@ import {
   tieflingNames,
   dragonbornNames,
   dragonbornClans,
-} from "./names.js";
+} from "./data/names.js";
 
 import {
   ages,
@@ -38,7 +38,7 @@ import {
   beliefsCE,
   personalityTraits,
   plotHooks,
-} from "./arrays.js";
+} from "./data/data.js";
 
 const sexes = ["female", "male"];
 const racialAbilityModifiers = {
@@ -300,7 +300,7 @@ function setRandomAlignment() {
   return confirmedAlignment;
 }
 
-function setRandomBeliefs() {
+function setRandomBelief() {
   if (selectedAlignment !== null) {
     confirmedAlignment = selectedAlignment;
   } else {
@@ -320,12 +320,6 @@ function setRandomBeliefs() {
   };
 
   document.getElementById("firstBelief").innerText = getRandomElement(
-    beliefs[confirmedAlignment]
-  );
-  document.getElementById("secondBelief").innerText = getRandomElement(
-    beliefs[confirmedAlignment]
-  );
-  document.getElementById("thirdBelief").innerText = getRandomElement(
     beliefs[confirmedAlignment]
   );
   document.getElementById("alignment").innerText = confirmedAlignment;
@@ -369,7 +363,7 @@ function generateRandomCharacter() {
   setRandomRolls();
   setRandomTraits();
   setRandomPlotHook();
-  setRandomBeliefs();
+  setRandomBelief();
 }
 
 document

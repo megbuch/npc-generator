@@ -9,174 +9,204 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Poppins"
     />
+    <script
+      defer
+      src="https://kit.fontawesome.com/9fc37ba3d7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="/js/main.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="top">
-        <h1>NPC Generator</h1>
-        <button class="btn generate">Generate NPC 🎲</button>
-        <select id="sexSelect">
-          <option value="">Select Sex</option>
-          <option value="female">Female</option>
-          <option value="male">Male</option>
-        </select>
-        <select id="raceSelect">
-          <option value="">Select Race</option>
-          <option value="Human">Human</option>
-          <option value="Dragonborn">Dragonborn</option>
-          <option value="Draconic Ancestry Dragonborn">
-            Draconic Ancestry Dragonborn
-          </option>
-          <option value="Dwarf">Dwarf</option>
-          <option value="Hill Dwarf">Hill Dwarf</option>
-          <option value="Mountain Dwarf">Mountain Dwarf</option>
-          <option value="Duergar Dwarf">Duergar Dwarf</option>
-          <option value="Deep Dwarf">Deep Dwarf</option>
-          <option value="Gold Dwarf">Gold Dwarf</option>
-          <option value="Shield Dwarf">Shield Dwarf</option>
-          <option value="Elf">Elf</option>
-          <option value="Half-Elf">Half-Elf</option>
-          <option value="High Elf">High Elf</option>
-          <option value="Wood Elf">Wood Elf</option>
-          <option value="Eladrin Elf">Eladrin Elf</option>
-          <option value="Drow Elf">Drow Elf</option>
-          <option value="Sea Elf">Sea Elf</option>
-          <option value="Gnome">Gnome</option>
-          <option value="Deep Gnome">Deep Gnome</option>
-          <option value="Rock Gnome">Rock Gnome</option>
-          <option value="Halfling">Halfling</option>
-          <option value="Lightfoot Halfling">Lightfoot Halfling</option>
-          <option value="Stout Halfling">Stout Halfling</option>
-          <option value="Orc">Orc</option>
-          <option value="Tiefling">Tiefling</option>
-          <option value="Asmodeus Tiefling">Asmodeus Tiefling</option>
-          <option value="Baalzebul Tiefling">Baalzebul Tiefling</option>
-          <option value="Dispater Tiefling">Dispater Tiefling</option>
-          <option value="Fierna Tiefling">Fierna Tiefling</option>
-          <option value="Glasya Tiefling">Glasya Tiefling</option>
-          <option value="Levistus Tiefling">Levistus Tiefling</option>
-          <option value="Mammon Tiefling">Mammon Tiefling</option>
-          <option value="Mephistopheles Tiefling">
-            Mephistopheles Tiefling
-          </option>
-          <option value="Zariel Tiefling">Zariel Tiefling</option>
-        </select>
-        <select id="alignmentSelect">
-          <option value="">Select Alignment</option>
-          <option value="Lawful Good">Lawful Good</option>
-          <option value="Lawful Neutral">Lawful Neutral</option>
-          <option value="Lawful Evil">Lawful Evil</option>
-          <option value="Neutral Good">Neutral Good</option>
-          <option value="True Neutral">True Neutral</option>
-          <option value="Neutral Evil">Neutral Evil</option>
-          <option value="Chaotic Good">Chaotic Good</option>
-          <option value="Chaotic Neutral">Chaotic Neutral</option>
-          <option value="Chaotic Evil">Chaotic Evil</option>
-        </select>
-      </div>
-      <div class="container-cards">
-        <div class="section about">
-          <div class="fullname">
-            <h2 id="firstName">Amelie</h2>
-            <h2 id="surname">Warmane</h2>
-          </div>
-          <div class="info">
-            <p class="labels">Sex: <span id="sex">Female</span></p>
-            <p class="labels">Age: <span id="age">Young Adult</span></p>
-            <p class="labels">Race: <span id="race">Human</span></p>
-            <p class="labels">
-              Occupation: <span id="job">Wine Merchant</span>
-            </p>
-            <p class="labels">
-              Orientation: <span id="orientation">Straight</span>
-            </p>
-            <p class="labels">
-              Relationship Status: <span id="relationship">Married</span>
-            </p>
-            <p class="labels">Children: <span id="children">2</span></p>
-          </div>
-          <div class="appearance">
-            <h3>Appearance</h3>
-            <span class="pronoun">She</span>
-            <span id="overallDescription"
-              >has gorgeous eyes. You'll get lost in them if you're not
-              careful.</span
-            >
-            <span class="pronoun">She</span>
-            <span id="bodyDescription">is quite petite.</span><br /><br />
-            <span class="pronoun">She</span> has
-            <span id="skinToneDescription">medium</span> skin,
-            <span id="eyeColor">pale blue</span> eyes, and
-            <span id="hairColor">dark brown</span> hair. It
-            <span id="hairStyle">is pulled into an elegant french twist.</span>
-            <br /><br />
-            <span class="pronoun">She</span>
-            <span id="clothing">a crimson silk cloak.</span>
-          </div>
+        <div class="row">
+          <h1>NPC Generator</h1>
+          <button class="generate">Generate NPC 🎲</button>
         </div>
-        <div class="section ability-personality">
-          <div class="subsection abilities">
-            <h3>Ability Scores</h3>
-            <div class="ability-scores-row">
-              <div class="ability-scores-column">
-                <p>STR</p>
-                <p>DEX</p>
-                <p>CON</p>
-                <p>INT</p>
-                <p>WIS</p>
-                <p>CHA</p>
+        <div class="row">
+          <select id="sexSelect">
+            <option value="">Select Sex</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+          </select>
+          <select id="raceSelect">
+            <option value="">Select Race</option>
+            <option value="Human">Human</option>
+            <option value="Dragonborn">Dragonborn</option>
+            <option value="Draconic Ancestry Dragonborn">
+              Draconic Ancestry Dragonborn
+            </option>
+            <option value="Dwarf">Dwarf</option>
+            <option value="Hill Dwarf">Hill Dwarf</option>
+            <option value="Mountain Dwarf">Mountain Dwarf</option>
+            <option value="Duergar Dwarf">Duergar Dwarf</option>
+            <option value="Deep Dwarf">Deep Dwarf</option>
+            <option value="Gold Dwarf">Gold Dwarf</option>
+            <option value="Shield Dwarf">Shield Dwarf</option>
+            <option value="Elf">Elf</option>
+            <option value="Half-Elf">Half-Elf</option>
+            <option value="High Elf">High Elf</option>
+            <option value="Wood Elf">Wood Elf</option>
+            <option value="Eladrin Elf">Eladrin Elf</option>
+            <option value="Drow Elf">Drow Elf</option>
+            <option value="Sea Elf">Sea Elf</option>
+            <option value="Gnome">Gnome</option>
+            <option value="Deep Gnome">Deep Gnome</option>
+            <option value="Rock Gnome">Rock Gnome</option>
+            <option value="Halfling">Halfling</option>
+            <option value="Lightfoot Halfling">Lightfoot Halfling</option>
+            <option value="Stout Halfling">Stout Halfling</option>
+            <option value="Orc">Orc</option>
+            <option value="Tiefling">Tiefling</option>
+            <option value="Asmodeus Tiefling">Asmodeus Tiefling</option>
+            <option value="Baalzebul Tiefling">Baalzebul Tiefling</option>
+            <option value="Dispater Tiefling">Dispater Tiefling</option>
+            <option value="Fierna Tiefling">Fierna Tiefling</option>
+            <option value="Glasya Tiefling">Glasya Tiefling</option>
+            <option value="Levistus Tiefling">Levistus Tiefling</option>
+            <option value="Mammon Tiefling">Mammon Tiefling</option>
+            <option value="Mephistopheles Tiefling">
+              Mephistopheles Tiefling
+            </option>
+            <option value="Zariel Tiefling">Zariel Tiefling</option>
+          </select>
+          <select id="alignmentSelect">
+            <option value="">Select Alignment</option>
+            <option value="Lawful Good">Lawful Good</option>
+            <option value="Lawful Neutral">Lawful Neutral</option>
+            <option value="Lawful Evil">Lawful Evil</option>
+            <option value="Neutral Good">Neutral Good</option>
+            <option value="True Neutral">True Neutral</option>
+            <option value="Neutral Evil">Neutral Evil</option>
+            <option value="Chaotic Good">Chaotic Good</option>
+            <option value="Chaotic Neutral">Chaotic Neutral</option>
+            <option value="Chaotic Evil">Chaotic Evil</option>
+          </select>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="row">
+          <section>
+            <div>
+              <h1>
+                <span id="firstName">Amelie</span>&nbsp;&nbsp;
+                <span id="surname">Warmane</span>
+              </h1>
+              <h2>
+                <span id="age">Young Adult</span>&nbsp;<span id="sex"
+                  >Female</span
+                >&nbsp;<span id="race">Human</span>
+              </h2>
+            </div>
+            <div>
+              <p class="info">
+                <i class="fa-solid fa-briefcase"></i>&nbsp;&nbsp;<span id="job"
+                  >Wine Merchant</span
+                >
+              </p>
+              <p class="info">
+                <i class="fa-solid fa-heart"></i>&nbsp;&nbsp;<span
+                  id="orientation"
+                  >Straight</span
+                >,&nbsp;<span id="relationship">Married</span>
+              </p>
+              <p class="info">
+                <i class="fa-solid fa-baby-carriage"></i>&nbsp;&nbsp;<span
+                  id="children"
+                  >2</span
+                >&nbsp;Children
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <div>
+                <h3>Appearance</h3>
+                <p>
+                  <span class="pronoun">She</span>
+                  <span id="overallDescription"
+                    >has gorgeous eyes. You'll get lost in them if you're not
+                    careful.</span
+                  >
+                  <span class="pronoun">She</span>
+                  <span id="bodyDescription">is quite petite.</span><br /><br />
+                  <span class="pronoun">She</span> has
+                  <span id="skinToneDescription">medium</span> skin,
+                  <span id="eyeColor">pale blue</span> eyes, and
+                  <span id="hairColor">dark brown</span> hair. It
+                  <span id="hairStyle"
+                    >is pulled into an elegant french twist.</span
+                  >
+                  <br /><br />
+                  <span class="pronoun">She</span>
+                  <span id="clothing">wears a crimson silk cloak.</span>
+                </p>
               </div>
-              <div class="ability-scores-column">
+            </div>
+            <div>
+              <h3>Personality</h3>
+              <span class="pronoun">She</span>
+              <span id="firstTrait"
+                >is a bit absent-minded. Often gets lost in daydreams and
+                forgets about the task at hand.</span
+              >
+              <br /><br />
+              <span class="pronoun">She</span>
+              <span id="secondTrait"
+                >is loved by family and friends alike. A genuinely good
+                person.</span
+              >
+            </div>
+          </section>
+          <section class="left">
+            <h3>Ability Scores</h3>
+            <div class="ability-scores">
+              <div class="row">
+                <p>STR</p>
                 <p id="str">12 (+1)</p>
+              </div>
+              <div class="row">
+                <p>DEX</p>
                 <p id="dex">13 (+1)</p>
+              </div>
+              <div class="row">
+                <p>CON</p>
                 <p id="con">6 (+1)</p>
+              </div>
+              <div class="row">
+                <p>INT</p>
                 <p id="int">10 (+1)</p>
+              </div>
+              <div class="row">
+                <p>WIS</p>
                 <p id="wis">12 (+1)</p>
+              </div>
+              <div class="row">
+                <p>CHA</p>
                 <p id="cha">16 (+1)</p>
               </div>
             </div>
-          </div>
-          <div class="subsection personality">
-            <h3>Personality</h3>
-            <span class="pronoun">She</span>
-            <span id="firstTrait"
-              >is a bit absent-minded. Often gets lost in daydreams and forgets
-              about the task at hand.</span
-            >
-            <br /><br />
-            <span class="pronoun">She</span>
-            <span id="secondTrait"
-              >is loved by family and friends alike. A genuinely good
-              person.</span
-            >
-          </div>
-          <div class="subsection plot-hook">
-            <h3>Plot Hook</h3>
-            <span class="pronoun">She</span>
-            <span id="plotHook"
-              >has heard rumor of a distant land of abundant riches.</span
-            >
-          </div>
-        </div>
-        <div class="section beliefs-alignment">
-          <h3>Alignment</h3>
-          <h3 id="alignment">Neutral Good</h3>
-          <div class="subsection beliefs">
-            <h3>Beliefs</h3>
-            <p id="firstBelief">"You don't need a reason to help people."</p>
-            <p id="secondBelief">
-              "To act in anger is to betray your own judgment."
-            </p>
-            <p id="thirdBelief">
-              "Protect those who can't defend themselves above all else, then
-              you can do as you will."
-            </p>
-          </div>
+            <div>
+              <h3 id="alignment">Neutral Good</h3>
+              <div class="beliefs">
+                <p id="firstBelief">
+                  "Protect those who can't defend themselves above all else,
+                  then you can do as you will."
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3>Plot Hook</h3>
+              <span class="pronoun">She</span>
+              <span id="plotHook"
+                >has heard rumor of a distant land of abundant riches.</span
+              >
+            </div>
+          </section>
         </div>
       </div>
-      <a href="#top"
-        ><button class="btn" id="returnToTop">Return to Top</button></a
-      >
+      <a href="#top"><button>Return to Top</button></a>
       <div class="copyright">
         Copyright © 2022
         <a href="https://twitter.com/thebardIRL">Meghan Bucher</a> /
@@ -184,5 +214,4 @@
       </div>
     </div>
   </body>
-  <script type="module" src="/js/script.js"></script>
 </html>
