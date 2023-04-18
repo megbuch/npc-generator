@@ -381,7 +381,7 @@ document
   .addEventListener("change", function () {
     selectedAlignment = this.value;
     setRandomAlignment();
-    setRandomBeliefs();
+    setRandomBelief();
   });
 
 document.getElementById("raceSelect").addEventListener("change", function () {
