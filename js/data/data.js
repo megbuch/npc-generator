@@ -618,7 +618,7 @@ const personalityTraits = [
   "enjoys stirring drama amongst the townspeople for no good reason.",
   "is generally nice, but can be confrontational. Be careful with this one.",
   "absolutely LOVES, lives, and breathes drama. There is never enough drama for this one.",
-  "is full of energy and can't stop figdgeting around. Continuously paces around the room. ",
+  "is full of energy and can't stop fidgeting around. Continuously paces around the room. ",
   "is having an affair and doesn't feel guilty about it.",
   "feels betrayed by most of society due to childhood trauma.",
   "enjoys lockpicking as a hobby.",

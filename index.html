@@ -25,12 +25,12 @@
         </div>
         <div class="row">
           <select id="sexSelect">
-            <option value="">Select Sex</option>
+            <option value="">Sex</option>
             <option value="female">Female</option>
             <option value="male">Male</option>
           </select>
           <select id="raceSelect">
-            <option value="">Select Race</option>
+            <option value="">Race</option>
             <option value="Human">Human</option>
             <option value="Dragonborn">Dragonborn</option>
             <option value="Draconic Ancestry Dragonborn">
@@ -71,7 +71,7 @@
             <option value="Zariel Tiefling">Zariel Tiefling</option>
           </select>
           <select id="alignmentSelect">
-            <option value="">Select Alignment</option>
+            <option value="">Alignment</option>
             <option value="Lawful Good">Lawful Good</option>
             <option value="Lawful Neutral">Lawful Neutral</option>
             <option value="Lawful Evil">Lawful Evil</option>
@@ -87,7 +87,7 @@
       <div class="wrapper">
         <div class="row">
           <section>
-            <div>
+            <div class="main">
               <h1>
                 <span id="firstName">Amelie</span>&nbsp;&nbsp;
                 <span id="surname">Warmane</span>
@@ -98,7 +98,7 @@
                 >&nbsp;<span id="race">Human</span>
               </h2>
             </div>
-            <div>
+            <div class="row">
               <p class="info">
                 <i class="fa-solid fa-briefcase"></i>&nbsp;&nbsp;<span id="job"
                   >Wine Merchant</span
@@ -117,33 +117,6 @@
                 >&nbsp;Children
               </p>
             </div>
-          </section>
-
-          <section>
-            <div>
-              <div>
-                <h3>Appearance</h3>
-                <p>
-                  <span class="pronoun">She</span>
-                  <span id="overallDescription"
-                    >has gorgeous eyes. You'll get lost in them if you're not
-                    careful.</span
-                  >
-                  <span class="pronoun">She</span>
-                  <span id="bodyDescription">is quite petite.</span><br /><br />
-                  <span class="pronoun">She</span> has
-                  <span id="skinToneDescription">medium</span> skin,
-                  <span id="eyeColor">pale blue</span> eyes, and
-                  <span id="hairColor">dark brown</span> hair. It
-                  <span id="hairStyle"
-                    >is pulled into an elegant french twist.</span
-                  >
-                  <br /><br />
-                  <span class="pronoun">She</span>
-                  <span id="clothing">wears a crimson silk cloak.</span>
-                </p>
-              </div>
-            </div>
             <div>
               <h3>Personality</h3>
               <span class="pronoun">She</span>
@@ -159,34 +132,62 @@
               >
             </div>
           </section>
-          <section class="left">
-            <h3>Ability Scores</h3>
-            <div class="ability-scores">
-              <div class="row">
-                <p>STR</p>
-                <p id="str">12 (+1)</p>
-              </div>
-              <div class="row">
-                <p>DEX</p>
-                <p id="dex">13 (+1)</p>
-              </div>
-              <div class="row">
-                <p>CON</p>
-                <p id="con">6 (+1)</p>
-              </div>
-              <div class="row">
-                <p>INT</p>
-                <p id="int">10 (+1)</p>
-              </div>
-              <div class="row">
-                <p>WIS</p>
-                <p id="wis">12 (+1)</p>
-              </div>
-              <div class="row">
-                <p>CHA</p>
-                <p id="cha">16 (+1)</p>
+
+          <section>
+            <div>
+              <h3>Appearance</h3>
+              <p>
+                <span class="pronoun">She</span>
+                <span id="overallDescription"
+                  >has gorgeous eyes. You'll get lost in them if you're not
+                  careful.</span
+                >
+                <span class="pronoun">She</span>
+                <span id="bodyDescription">is quite petite.</span><br /><br />
+                <span class="pronoun">She</span> has
+                <span id="skinToneDescription">medium</span> skin,
+                <span id="eyeColor">pale blue</span> eyes, and
+                <span id="hairColor">dark brown</span> hair. It
+                <span id="hairStyle"
+                  >is pulled into an elegant french twist.</span
+                >
+                <br /><br />
+                <span class="pronoun">She</span>
+                <span id="clothing">wears a crimson silk cloak.</span>
+              </p>
+            </div>
+          </section>
+          <section>
+            <div>
+              <h3>Ability Scores</h3>
+              <div class="ability-scores">
+                <div class="row">
+                  <p>STR</p>
+                  <p id="str">12 (+1)</p>
+                </div>
+                <div class="row">
+                  <p>DEX</p>
+                  <p id="dex">13 (+1)</p>
+                </div>
+                <div class="row">
+                  <p>CON</p>
+                  <p id="con">6 (+1)</p>
+                </div>
+                <div class="row">
+                  <p>INT</p>
+                  <p id="int">10 (+1)</p>
+                </div>
+                <div class="row">
+                  <p>WIS</p>
+                  <p id="wis">12 (+1)</p>
+                </div>
+                <div class="row">
+                  <p>CHA</p>
+                  <p id="cha">16 (+1)</p>
+                </div>
               </div>
             </div>
+
             <div>
               <h3 id="alignment">Neutral Good</h3>
               <div class="beliefs">
@@ -206,12 +207,12 @@
           </section>
         </div>
       </div>
-      <a href="#top"><button>Return to Top</button></a>
-      <div class="copyright">
-        Copyright © 2022
-        <a href="https://twitter.com/thebardIRL">Meghan Bucher</a> /
-        <a href="https://github.com/bardIRL">bardIRL</a>
-      </div>
+      <footer>
+        <a href="#top">Return to Top</a>&nbsp;&nbsp;|&nbsp;&nbsp;Created
+        by&nbsp;<a target="_blank" href="https://github.com/bardIRL"
+          >Meghan Bucher</a
+        >
+      </footer>
     </div>
   </body>
 </html>
