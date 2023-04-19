@@ -103,7 +103,7 @@ function getRandomElement(array) {
 }
 
 function setRandomSex() {
-  if (selectedSex !== null) {
+  if (selectedSex !== null && selectedSex !== "") {
     confirmedSex = selectedSex;
   } else {
     confirmedSex = getRandomElement(sexes);
@@ -135,7 +135,7 @@ function setRandomAge() {
 }
 
 function setRandomRace() {
-  if (selectedRace !== null) {
+  if (selectedRace !== null && selectedRace !== "") {
     confirmedRace = selectedRace;
   } else {
     confirmedRace = getRandomElement(races);
@@ -291,7 +291,7 @@ function setRandomRolls() {
 }
 
 function setRandomAlignment() {
-  if (selectedAlignment !== null) {
+  if (selectedAlignment !== null && selectedAlignment !== "") {
     confirmedAlignment = selectedAlignment;
   } else {
     confirmedAlignment = getRandomElement(alignments);
@@ -301,7 +301,7 @@ function setRandomAlignment() {
 }
 
 function setRandomBelief() {
-  if (selectedAlignment !== null) {
+  if (selectedAlignment !== null && selectedAlignment !== "") {
     confirmedAlignment = selectedAlignment;
   } else {
     confirmedAlignment = getRandomElement(alignments);
@@ -337,13 +337,13 @@ function setRandomPlotHook() {
 }
 
 function generateRandomCharacter() {
-  if (selectedSex === null) {
+  if (selectedSex === null || selectedSex === "") {
     setRandomSex();
   }
-  if (selectedRace === null) {
+  if (selectedRace === null || selectedRace === "") {
     setRandomRace();
   }
-  if (selectedAlignment === null) {
+  if (selectedAlignment === null || selectedAlignment === "") {
     setRandomAlignment();
   }
   setRandomFirstName();
