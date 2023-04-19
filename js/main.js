@@ -144,7 +144,7 @@ function setRandomRace() {
 }
 
 function setRandomLastName() {
-  if (selectedRace !== null) {
+  if (selectedRace !== null && selectedRace !== "") {
     confirmedRace = selectedRace;
   }
   if (
